@@ -4,7 +4,7 @@ user = [
     "quantity": 1
     }]
 
-ron = [
+ron = ["I am Ron. Welcome to my table. This is my inventory",
     {"item": "axe",
     "value": 1,
     "quantity": 1},
