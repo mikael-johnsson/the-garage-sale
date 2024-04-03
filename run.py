@@ -50,13 +50,15 @@ def visit_vendor(vendor):
     for i in vendor:
         print(f"Item: {i["item"].capitalize()}\nQuantity: {i["quantity"]}\n")
         vendors_items.append(i["item"])
-
     
     chosen_item = input("What would you like to trade? ")
     if chosen_item in vendors_items:
         print("I have that item!")
 
 def show_inventory():
+    """
+    Displays the users inventory
+    """
     print(f"You have: {user[0]["quantity"]} {user[0]["item"]}")
 
 def display_score_and_exit():
