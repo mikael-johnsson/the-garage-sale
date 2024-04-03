@@ -55,15 +55,19 @@ def display_score_and_exit():
         total_score += i["value"]
     print(f"Your inventory sold for ${total_score}, good job!")
 
-    answer = input("Are you ready to exit game? Y/N")
-    if answer.lower == "y":
-        exit()
-
-
-
-
-
-
+    exit_answer = True
+    while (exit_answer):
+        answer = input("Are you ready to exit game? (Y/N):")
+        if answer.lower() == "y":
+            print("You pressed y")
+            exit()
+            exit_answer = False
+        elif answer.lower() == "n":
+            print("you pressed n")
+            game_menu()
+            exit_answer = False
+        else:
+            print("Something went wrong, please input the letter 'Y' or 'N'")
 
 def main():
     """
@@ -72,6 +76,6 @@ def main():
     display_instructions()
     username = input_username()
     game_menu()
+    display_score_and_exit()
     
-# main()
-display_score_and_exit()
+main()
