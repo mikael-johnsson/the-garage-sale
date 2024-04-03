@@ -20,7 +20,8 @@ def game_menu():
     """
     Displays a menu to allow the user to choose what to do in the game
     """
-    print("1: Trade with Ron\n"
+    print("It is time to start the game. Let the great trading begin!\n"
+        "1: Trade with Ron\n"
         "2: Show your inventory\n" 
         "3: Show score and exit game")
     choice = ""
@@ -33,7 +34,7 @@ def game_menu():
                 choice_not_made = False
             case "2":
                 choice = "2"
-                choice_not_made = False
+                show_inventory()
             case "3":
                 choice = "3"
                 choice_not_made = False
@@ -65,7 +66,6 @@ def main():
     """
     display_instructions()
     username = input_username()
-    print(game_menu())
+    game_menu()
     
-# main()
-show_inventory()
+main()
