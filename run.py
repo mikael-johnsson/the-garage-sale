@@ -14,14 +14,14 @@ def input_username():
     Lets the user insert a username
     """
     username = input("Enter username here:")
+    print("It is time to start the game. Let the great trading begin!\n")
     return username
     
 def game_menu():
     """
     Displays a menu to allow the user to choose what to do in the game
     """
-    print("It is time to start the game. Let the great trading begin!\n"
-        "1: Trade with Ron\n"
+    print("1: Trade with Ron\n"
         "2: Show your inventory\n" 
         "3: Show score and exit game")
     choice = ""
