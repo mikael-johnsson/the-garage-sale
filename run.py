@@ -30,18 +30,23 @@ def game_menu():
         selected_answer = input("Choose a path:")
         match selected_answer:
             case "1":
-                choice = "1"
+                choice = ron
                 choice_not_made = False
             case "2":
-                choice = "2"
                 show_inventory()
             case "3":
-                choice = "3"
                 choice_not_made = False
                 display_score_and_exit()
             case _:
                 print("Something went wrong, select a number between 1-3")
     return choice
+
+def visit_vendor(vendor):
+    """
+    Displays the chosen vendors inventory
+    """
+    for i in vendor:
+        print(i["item"].capitalize())
 
 def show_inventory():
     print(f"You have: {user[0]["quantity"]} {user[0]["item"]}")
@@ -75,7 +80,9 @@ def main():
     """
     display_instructions()
     username = input_username()
-    game_menu()
-    display_score_and_exit()
+    chosen_vendor = game_menu()
+    visit_vendor(chosen_vendor)
     
 main()
+
+
