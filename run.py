@@ -1,4 +1,5 @@
 # python3 run.py
+from data import *
 
 def display_instructions():
     """
@@ -8,7 +9,6 @@ def display_instructions():
     print("The game is simple: trade your thumbtack with higher valued items at one of the five vendors. \nIn ten rounds, your aim is to trade your inventory up as high as you can!")
     print("Your score is the amount of cash you receive when selling your items when leaving the market.")
     
-
 def input_username():
     """
     Lets the user insert a username
@@ -41,6 +41,10 @@ def game_menu():
             case _:
                 print("Something went wrong, select a number between 1-3")
     return choice
+
+def show_inventory():
+    print(f"You have: {user[0]}")
+
 def display_score_and_exit():
     """
     Displays score and exits game
@@ -48,6 +52,11 @@ def display_score_and_exit():
     answer = input("Are you ready to exit game? Y/N")
     if answer.lower == "y":
         exit()
+
+
+
+
+
 
 
 def main():
@@ -58,5 +67,5 @@ def main():
     username = input_username()
     print(game_menu())
     
-
-main()
+# main()
+show_inventory()
