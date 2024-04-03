@@ -43,7 +43,7 @@ def game_menu():
     return choice
 
 def show_inventory():
-    print(f"You have: {user[0]}")
+    print(f"You have: {user[0]["quantity"]} {user[0]["item"]}")
 
 def display_score_and_exit():
     """
