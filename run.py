@@ -50,6 +50,11 @@ def display_score_and_exit():
     """
     Displays score and exits game
     """
+    total_score = 0
+    for i in user:
+        total_score += i["value"]
+    print(f"Your inventory sold for ${total_score}, good job!")
+
     answer = input("Are you ready to exit game? Y/N")
     if answer.lower == "y":
         exit()
@@ -68,4 +73,5 @@ def main():
     username = input_username()
     game_menu()
     
-main()
+# main()
+display_score_and_exit()
