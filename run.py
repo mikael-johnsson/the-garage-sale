@@ -37,9 +37,18 @@ def game_menu():
             case "3":
                 choice = "3"
                 choice_not_made = False
+                display_score_and_exit()
             case _:
                 print("Something went wrong, select a number between 1-3")
     return choice
+def display_score_and_exit():
+    """
+    Displays score and exits game
+    """
+    answer = input("Are you ready to exit game? Y/N")
+    if answer.lower == "y":
+        exit()
+
 
 def main():
     """
