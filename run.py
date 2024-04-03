@@ -49,6 +49,7 @@ def visit_vendor(vendor):
     """
     Displays the chosen vendors inventory
     """
+
     vendors_items = []
     vendors_quantity = [] #necessary??
     for i in vendor:
@@ -56,15 +57,39 @@ def visit_vendor(vendor):
         vendors_items.append(i["item"])
         vendors_quantity.append(i["quantity"])
 
-    MyBool = True
-    while(MyBool):
-        chosen_item = input("What would you like to trade? ")
-        if chosen_item.lower() in vendors_items:
-            print("I have that item!")
-            break
-        else:
-            print("I can't see that in my inventory. Maybe you misspelled?")
+    answer = input("Would you like to make a trade? (Y/N):")
+    if answer.lower() == "n":
+        print("Let us go back to the menu then.")
+        game_menu()
+    elif answer.lower() == "y":
+
+        MyBool = True
+        while(MyBool):
+            chosen_item = input("What would you like to trade? ")
+            if chosen_item.lower() in vendors_items:
+                i = vendors_items.index(chosen_item)
+                print("I have that item!")
+                print(f"I have this amount of that: {vendors_quantity[i]}")
+                chosen_qnt = int(input("How many do you want?")) #this needs some error handling
+                if chosen_qnt <= vendors_quantity[i]:
+                    print("I can make that trade")
+                else: print("I dont have that many")
+                
+            else:
+                print("I can't see that in my inventory. Maybe you misspelled?")
+    else:
+        print("Please answer Y or N")
+
+
+    
     print("What now?")
+
+def trade(item, quantity):
+    """
+    Users trade offer is tested
+    If accepted - user and vendors inventory updated
+    """
+
 
 def show_inventory():
     """
