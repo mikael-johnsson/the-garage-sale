@@ -24,7 +24,8 @@ def game_menu():
     """
     print("1: Trade with Ron\n"
         "2: Show your inventory\n" 
-        "3: Show score and exit game")
+        "3: Show score and exit game\n"
+        "4: Learn more about the vendors")
     choice = ""
     choice_not_made = True
     while(choice_not_made):
@@ -38,6 +39,8 @@ def game_menu():
             case "3":
                 choice_not_made = False
                 display_score_and_exit()
+            case "4":
+                show_vendor_info()
             case _:
                 print("Something went wrong, select a number between 1-3")
     return choice
@@ -52,7 +55,7 @@ def visit_vendor(vendor):
         print(f"Item: {i["item"].capitalize()}\nQuantity: {i["quantity"]}\n")
         vendors_items.append(i["item"])
         vendors_quantity.append(i["quantity"])
-        
+
     MyBool = True
     while(MyBool):
         chosen_item = input("What would you like to trade? ")
@@ -68,6 +71,14 @@ def show_inventory():
     Displays the users inventory
     """
     print(f"You have: {user[0]["quantity"]} {user[0]["item"]}")
+
+def show_vendor_info():
+    """
+    Display ino about the vendors
+    """
+    print("There are five vendors at the market:\n"
+        "Ron - the grumpy man with a big mustasch. Not to keen on selling his stuff.\n"
+        "Jim - A tall, skinny guy who is always happy. Would love to trade with you!")
 
 def display_score_and_exit():
     """
