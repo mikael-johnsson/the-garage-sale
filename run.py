@@ -47,13 +47,21 @@ def visit_vendor(vendor):
     Displays the chosen vendors inventory
     """
     vendors_items = []
+    vendors_quantity = [] #necessary??
     for i in vendor:
         print(f"Item: {i["item"].capitalize()}\nQuantity: {i["quantity"]}\n")
         vendors_items.append(i["item"])
-    
-    chosen_item = input("What would you like to trade? ")
-    if chosen_item in vendors_items:
-        print("I have that item!")
+        vendors_quantity.append(i["quantity"])
+        
+    MyBool = True
+    while(MyBool):
+        chosen_item = input("What would you like to trade? ")
+        if chosen_item.lower() in vendors_items:
+            print("I have that item!")
+            break
+        else:
+            print("I can't see that in my inventory. Maybe you misspelled?")
+    print("What now?")
 
 def show_inventory():
     """
