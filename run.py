@@ -1,5 +1,6 @@
 # python3 run.py
 from data import *
+from tabulate import tabulate
 
 def display_instructions():
     """
@@ -46,7 +47,7 @@ def visit_vendor(vendor):
     Displays the chosen vendors inventory
     """
     for i in vendor:
-        print(i["item"].capitalize())
+        print(f"Item: {i["item"].capitalize()}\nQuantity: {i["quantity"]}\n")
 
 def show_inventory():
     print(f"You have: {user[0]["quantity"]} {user[0]["item"]}")
