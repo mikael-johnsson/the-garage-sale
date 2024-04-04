@@ -50,37 +50,20 @@ def visit_vendor(vendor):
     Displays the chosen vendors inventory
     """
     print("This is my inventory: \n")
-    vendors_items = []
-    vendors_quantity = [] #necessary??
-    for i in vendor:
-        print(f"Item: {i["item"].capitalize()}\nQuantity: {i["quantity"]}\n")
-        vendors_items.append(i["item"])
-        vendors_quantity.append(i["quantity"])
-
-    answer = input("Would you like to make a trade? (Y/N): ") #this need some error handling
+    items_list = vendor["items"]
+    for item in items_list:
+        print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}")
+    
+    answer = input("\nWould you like to make a trade? (Y/N): ") #this need some error handling
     if answer.lower() == "n":
         print("Let us go back to the menu then.")
         game_menu()
     elif answer.lower() == "y":
-        MyBool = True
-        while(MyBool):
-            chosen_item = input("What would you like to trade? ").lower()
-            if chosen_item in vendors_items:
-                i = vendors_items.index(chosen_item)
-                print("I have that item!")
-                print(f"I have this amount of that: {vendors_quantity[i]}\n")
-                chosen_qnt = int(input("How many do you want? ")) #this need some error handling
-                if chosen_qnt <= vendors_quantity[i]:
-                    print("I can make that trade")
-                    MyBool = False
-                else: print("I dont have that many")
-                
-            else:
-                print("I can't see that in my inventory. Maybe you misspelled?")
+        chosen_item = input("What would you like to trade? ").lower()
     else:
         print("Please answer Y or N")
 
-    return chosen_item, chosen_qnt, luck_modifier
+    return chosen_item, chosen_qnt
     
     print("What now?")
 
