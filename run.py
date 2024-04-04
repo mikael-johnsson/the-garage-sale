@@ -24,14 +24,14 @@ def game_menu():
     choice = ""
     choice_not_made = True
     while(choice_not_made):
-        print("1: Trade with Ron\n"
+        print("1: Go to the garage sale\n"
         "2: Show your inventory\n" 
         "3: Show score and exit game\n"
         "4: Learn more about the vendors")
         selected_answer = input("\nChoose an option:\n")
         match selected_answer:
             case "1":
-                choice = jim #turn into function
+                go_to_market()
                 choice_not_made = False
             case "2":
                 show_inventory()
@@ -42,7 +42,41 @@ def game_menu():
                 show_vendor_info()
             case _:
                 print("Something went wrong, select a number between 1-3")
+    
+
+def go_to_market():
+    """
+    Allows user to choose which vendor to meet
+    """
+    choice = ""
+    choice_not_made = True
+    while(choice_not_made):
+        print("1: Jim\n"
+        "2: Michael\n" 
+        "3: Angela\n"
+        "4: Kevin\n"
+        "5: Phyllis")
+        selected_answer = input("\nChoose an option:\n")
+        match selected_answer:
+            case "1":
+                choice = jim
+                choice_not_made = False
+            case "2":
+                choice = michael
+                choice_not_made = False
+            case "3":
+                choice = angela
+                choice_not_made = False
+            case "4":
+                choice = kevin
+                choice_not_made = False
+            case "5":
+                choice = phyllis
+                choice_not_made = False
+            case _:
+                print("Something went wrong, select a number between 1-5")
     visit_vendor(choice)
+
 
 def visit_vendor(vendor):
     """
