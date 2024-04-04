@@ -54,28 +54,40 @@ def visit_vendor(vendor):
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}, {item["quantity"]} pcs")
     
-    awaiting_input = True
-    while (awaiting_input):
+    trade_input = True
+    while (trade_input):
         answer = input("\nWould you like to make a trade? (Y/N): ")
         if answer.lower() == "n":
-            awaiting_input = False
+            trade_input = False
             print("Let us go back to the menu then.")
             game_menu()
 
         elif answer.lower() == "y":
-            awaiting_input = False
-            chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
-            i = chosen_number - 1
-            chosen_item = items_list[(i)]
-            print("I have that item!")
-            print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
-            chosen_qnt = int(input("How many do you want? ")) #this need some error handling
-            if chosen_qnt <= items_list[(i)]["quantity"]:
-                    print("I can make that trade")
-                    trade(chosen_item, chosen_qnt, this_vendor)
-            else: 
-                print("I dont have that many")
-                game_menu()
+            trade_input = False
+            item_input = True
+            while(item_input):
+                try:
+                    chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
+                    item_input = False
+                    i = chosen_number - 1
+                    chosen_item = items_list[(i)]
+                    print("I have that item!")
+                    print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
+                except ValueError:
+                    print(f"Something went wrong, select a number between 1-{len(items_list)}")
+
+            quantity_input = True
+            while(quantity_input):
+                try:
+                    chosen_qnt = int(input("How many do you want? ")) #this need some error handling
+                    if chosen_qnt <= items_list[(i)]["quantity"]:
+                            print("I can make that trade")
+                            trade(chosen_item, chosen_qnt, this_vendor)
+                    else: 
+                        print("I dont have that many")
+                        game_menu()
+                except ValueError:
+                    print(f"Something went wrong, select a number")
 
         else:
             print("Please answer Y or N")
