@@ -31,7 +31,7 @@ def game_menu():
         selected_answer = input("\nChoose an option:\n")
         match selected_answer:
             case "1":
-                choice = ron
+                choice = jim #turn into function
                 choice_not_made = False
             case "2":
                 show_inventory()
@@ -48,9 +48,9 @@ def visit_vendor(vendor):
     """
     Displays the chosen vendors inventory
     """
-    this_vendor = vendor
-    print(f"\n{vendor["welcome message"]} \n")
-    items_list = vendor["items"]
+    
+    print(f"\n{vendor.welcome} \n")
+    items_list = vendor.items
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}, {item["quantity"]} pcs")
     
@@ -59,7 +59,7 @@ def visit_vendor(vendor):
         answer = input("\nWould you like to make a trade? (Y/N): ")
         if answer.lower() == "n":
             trade_input = False
-            print("Let us go back to the menu then.")
+            print("\nLet us go back to the menu then.")
             game_menu()
 
         elif answer.lower() == "y":
@@ -79,10 +79,10 @@ def visit_vendor(vendor):
             quantity_input = True
             while(quantity_input):
                 try:
-                    chosen_qnt = int(input("How many do you want? ")) #this need some error handling
+                    chosen_qnt = int(input("How many do you want? ")) 
                     if chosen_qnt <= items_list[(i)]["quantity"]:
                             print("I can make that trade")
-                            trade(chosen_item, chosen_qnt, this_vendor)
+                            trade(chosen_item, chosen_qnt, vendor)
                     else: 
                         print("I dont have that many")
                         game_menu()
@@ -98,17 +98,15 @@ def trade(item, quantity, vendor):
     If accepted - user and vendor inventory updated
     """
     player_value = player.items["value"] * player.items["quantity"] * player.luck
-    vendor_value = item["value"] * quantity * vendor["sale modifier"] 
+    vendor_value = item["value"] * quantity * vendor.sale
     if player_value >= vendor_value:
         new_user_item = item
         new_vendor_item = player.items
         print("Trade went through!")
         player.items = new_user_item
         player.items["quantity"] = quantity
-        vendor["items"].append(new_vendor_item)
-        vendor["items"].remove(item)
-    
-        
+        vendor.items.append(new_vendor_item)
+        vendor.items.remove(item)   
     else:
         print("That's a bad trade for me")
     game_menu()
@@ -132,7 +130,7 @@ def display_score_and_exit():
     """
     Displays score and exits game
     """
-    print(f"Your inventory is worth ${player.items["value"]}, good job!")
+    print(f"Your inventory is worth ${player.items["value"]}, good job {player.username}!")
 
     exit_answer = True
     while (exit_answer):
@@ -158,8 +156,8 @@ def main():
    
 
 if __name__ == "__main__": 
-    player = User(1.2, {"item": "thumbtack", "value": 1, "quantity": 1}, "")
     main()
+
 
 
 

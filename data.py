@@ -19,3 +19,21 @@ class User:
 
     def inventory(self):
         print(self.items["item"].capitalize())
+
+player = User(1.2, {"item": "thumbtack", "value": 1, "quantity": 1}, "")
+
+class Vendor:
+    """
+    Creates vendor
+    """
+    def __init__(self, welcome_message, sale_modifier, items):
+        self.welcome = welcome_message
+        self.sale = sale_modifier
+        self.items = items
+
+jim = Vendor("Hello there", 0.7, [{"item": "hair spray",
+                                    "value": 3,
+                                    "quantity": 1},
+                                    {"item": "scissor",
+                                    "value": 1,
+                                    "quantity": 2}] )
