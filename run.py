@@ -51,7 +51,8 @@ def go_to_market():
     choice = ""
     choice_not_made = True
     while(choice_not_made):
-        print("\n1: Jim\n"
+        print("\nWelcome to the garage sale! Choose a table to visit:\n"
+        "1: Jim\n"
         "2: Michael\n" 
         "3: Angela\n"
         "4: Kevin\n"
@@ -75,8 +76,7 @@ def go_to_market():
                 choice_not_made = False
             case _:
                 print("Something went wrong, select a number between 1-5")
-    print(choice)
-    #visit_vendor(choice)
+    visit_vendor(choice)
 
 def visit_vendor(vendor):
     """
@@ -115,7 +115,6 @@ def visit_vendor(vendor):
                 try:
                     chosen_qnt = int(input("How many do you want? ")) 
                     if chosen_qnt <= items_list[(i)]["quantity"]:
-                            print("I can make that trade")
                             trade(chosen_item, chosen_qnt, vendor)
                     else: 
                         print("I dont have that many")

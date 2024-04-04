@@ -63,7 +63,7 @@ angela = Vendor("Angela: Good afternoon. Before you I lay several quite valuble 
                 {"item": "used cat toy","value": 1,"quantity": 4}
                 ])
 
-phyllis = Vendor("Phyllis: Oh, hello! Please, come take a look. Have you met my husband, Bob Vance, Vance Refrigiration?", 0,8, 
+phyllis = Vendor("Phyllis: Oh, hello! Please, come take a look. Have you met my husband, Bob Vance, Vance Refrigiration?", 0.8,
                 [{"item": "used mini fridge","value": 11,"quantity": 1},
                 {"item": "oven mitt","value": 4,"quantity": 4},
                 {"item": "santa costume","value": 10,"quantity": 1},
