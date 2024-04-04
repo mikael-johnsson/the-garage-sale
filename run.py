@@ -22,13 +22,13 @@ def game_menu():
     """
     Displays a menu to allow the user to choose what to do in the game
     """
-    print("1: Trade with Ron\n"
-        "2: Show your inventory\n" 
-        "3: Show score and exit game\n"
-        "4: Learn more about the vendors")
     choice = ""
     choice_not_made = True
     while(choice_not_made):
+        print("1: Trade with Ron\n"
+        "2: Show your inventory\n" 
+        "3: Show score and exit game\n"
+        "4: Learn more about the vendors")
         selected_answer = input("\nChoose an option:\n")
         match selected_answer:
             case "1":
@@ -43,7 +43,7 @@ def game_menu():
                 show_vendor_info()
             case _:
                 print("Something went wrong, select a number between 1-3")
-    return choice
+    visit_vendor(choice)
 
 def visit_vendor(vendor):
     """
@@ -70,14 +70,13 @@ def visit_vendor(vendor):
         chosen_qnt = int(input("How many do you want? ")) #this need some error handling
         if chosen_qnt <= items_list[(i)]["quantity"]:
                 print("I can make that trade")
-        else: print("I dont have that many")
-
+                trade(chosen_item, chosen_qnt, this_vendor)
+        else: 
+            print("I dont have that many")
+            game_menu()
 
     else:
         print("Please answer Y or N")
-
-    trade(chosen_item, chosen_qnt, this_vendor)
-    
 
 def trade(item, quantity, vendor):
     """
@@ -101,7 +100,7 @@ def show_inventory():
     """
     Displays the users inventory
     """
-    print(f"You have: {user[0]["quantity"]} {user[0]["item"]}")
+    print(f"You have: {user["items"]["quantity"]} {user["items"]["item"]}")
 
 def show_vendor_info():
     """
@@ -115,19 +114,16 @@ def display_score_and_exit():
     """
     Displays score and exits game
     """
-    total_score = 0
-    for i in user:
-        total_score += i["value"]
-    print(f"Your inventory sold for ${total_score}, good job!")
+    print(f"Your inventory sold for ${user["items"]["value"]}, good job!")
 
     exit_answer = True
     while (exit_answer):
-        answer = input("Are you ready to exit game? (Y/N):")
-        if answer.lower() == "y":
+        answer = input("Are you ready to exit game? (Y/N):").lower()
+        if answer == "y":
             print("You pressed y")
             exit()
             exit_answer = False
-        elif answer.lower() == "n":
+        elif answer == "n":
             print("you pressed n")
             game_menu()
             exit_answer = False
@@ -140,8 +136,8 @@ def main():
     """
     display_instructions()
     username = input_username()
-    chosen_vendor = game_menu()
-    visit_vendor(chosen_vendor)
+    game_menu()
+   
 
 if __name__ == "__main__": 
     main()
