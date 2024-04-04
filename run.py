@@ -52,22 +52,35 @@ def visit_vendor(vendor):
     print("This is my inventory: \n")
     items_list = vendor["items"]
     for item in items_list:
-        print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}")
+        print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}, {item["quantity"]} pcs")
     
     answer = input("\nWould you like to make a trade? (Y/N): ") #this need some error handling
     if answer.lower() == "n":
         print("Let us go back to the menu then.")
         game_menu()
+
     elif answer.lower() == "y":
-        chosen_item = input("What would you like to trade? ").lower()
+        chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
+        i = chosen_number - 1
+        chosen_item = items_list[(i)]["item"]
+        print("I have that item!")
+        print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
+
+        chosen_qnt = int(input("How many do you want? ")) #this need some error handling
+        if chosen_qnt <= items_list[(i)]["quantity"]:
+                print("I can make that trade")
+        else: print("I dont have that many")
+
+
     else:
         print("Please answer Y or N")
-
-    return chosen_item, chosen_qnt
+    sale_modifier = vendor["sale modifer"]
     
-    print("What now?")
+    trade(chosen_item, chosen_qnt, sale_modifier)
 
-def trade(item, quantity):
+    
+
+def trade(item, quantity, modifier):
     """
     Users trade offer is tested
     If accepted - user and vendors inventory updated
