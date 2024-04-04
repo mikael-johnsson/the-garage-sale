@@ -54,28 +54,31 @@ def visit_vendor(vendor):
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}, {item["quantity"]} pcs")
     
-    answer = input("\nWould you like to make a trade? (Y/N): ") #this need some error handling
-    if answer.lower() == "n":
-        print("Let us go back to the menu then.")
-        game_menu()
-
-    elif answer.lower() == "y":
-        chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
-        i = chosen_number - 1
-        chosen_item = items_list[(i)]
-        print("I have that item!")
-        print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
-
-        chosen_qnt = int(input("How many do you want? ")) #this need some error handling
-        if chosen_qnt <= items_list[(i)]["quantity"]:
-                print("I can make that trade")
-                trade(chosen_item, chosen_qnt, this_vendor)
-        else: 
-            print("I dont have that many")
+    awaiting_input = True
+    while (awaiting_input):
+        answer = input("\nWould you like to make a trade? (Y/N): ")
+        if answer.lower() == "n":
+            awaiting_input = False
+            print("Let us go back to the menu then.")
             game_menu()
 
-    else:
-        print("Please answer Y or N")
+        elif answer.lower() == "y":
+            awaiting_input = False
+            chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
+            i = chosen_number - 1
+            chosen_item = items_list[(i)]
+            print("I have that item!")
+            print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
+            chosen_qnt = int(input("How many do you want? ")) #this need some error handling
+            if chosen_qnt <= items_list[(i)]["quantity"]:
+                    print("I can make that trade")
+                    trade(chosen_item, chosen_qnt, this_vendor)
+            else: 
+                print("I dont have that many")
+                game_menu()
+
+        else:
+            print("Please answer Y or N")
 
 def trade(item, quantity, vendor):
     """
