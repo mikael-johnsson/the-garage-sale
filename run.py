@@ -49,6 +49,7 @@ def visit_vendor(vendor):
     """
     Displays the chosen vendors inventory
     """
+    this_vendor = vendor
     print("This is my inventory: \n")
     items_list = vendor["items"]
     for item in items_list:
@@ -62,7 +63,7 @@ def visit_vendor(vendor):
     elif answer.lower() == "y":
         chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
         i = chosen_number - 1
-        chosen_item = items_list[(i)]["item"]
+        chosen_item = items_list[(i)]
         print("I have that item!")
         print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
 
@@ -74,18 +75,27 @@ def visit_vendor(vendor):
 
     else:
         print("Please answer Y or N")
-    sale_modifier = vendor["sale modifer"]
-    
-    trade(chosen_item, chosen_qnt, sale_modifier)
 
+    trade(chosen_item, chosen_qnt, this_vendor)
     
 
-def trade(item, quantity, modifier):
+def trade(item, quantity, vendor):
     """
     Users trade offer is tested
-    If accepted - user and vendors inventory updated
+    If accepted - user and vendor inventory updated
     """
-
+    user_value = user["items"]["value"] * user["items"]["quantity"] * user["luck modifier"]
+    vendor_value = item["value"] * quantity * vendor["sale modifier"] 
+    if user_value >= vendor_value:
+        new_user_item = item
+        new_vendor_item = user["items"]
+        print("Trade went through!")
+        user["items"] = new_user_item
+        vendor["items"].append(new_vendor_item)
+        vendor["items"].remove(item)
+    else:
+        print("That's a bad trade for me")
+    game_menu()
 
 def show_inventory():
     """
@@ -131,8 +141,7 @@ def main():
     display_instructions()
     username = input_username()
     chosen_vendor = game_menu()
-    chosen_tuple = visit_vendor(chosen_vendor)
-    print(f"I want to trade {chosen_tuple[1]} {chosen_tuple[0]}")
+    visit_vendor(chosen_vendor)
 
 if __name__ == "__main__": 
     main()
