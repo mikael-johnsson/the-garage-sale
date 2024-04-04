@@ -106,7 +106,7 @@ def show_inventory():
     """
     Displays the users inventory
     """
-    print(f"You have: {user["items"]["quantity"]} {user["items"]["item"]}")
+    print(f"You have: {player.items["quantity"]} {player.items["item"].capitalize()}\n")
 
 def show_vendor_info():
     """
@@ -120,7 +120,7 @@ def display_score_and_exit():
     """
     Displays score and exits game
     """
-    print(f"Your inventory sold for ${user["items"]["value"]}, good job!")
+    print(f"Your inventory is worth ${player.items["value"]}, good job!")
 
     exit_answer = True
     while (exit_answer):
