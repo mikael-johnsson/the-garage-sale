@@ -49,7 +49,7 @@ def visit_vendor(vendor):
     Displays the chosen vendors inventory
     """
     this_vendor = vendor
-    print("This is my inventory: \n")
+    print(f"\n{vendor["welcome message"]} \n")
     items_list = vendor["items"]
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}, {item["quantity"]} pcs")

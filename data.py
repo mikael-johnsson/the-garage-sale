@@ -1,4 +1,4 @@
-ron = {"welcome message": "Hello. This is my table of stuff. Trade something if you want, I don't care.",
+ron = {"welcome message": "Ron: Hello. This is my table of stuff. Trade something if you want, I don't care.",
         "sale modifier" : 1,
         "items": [{"item": "axe",
                 "value": 7,
