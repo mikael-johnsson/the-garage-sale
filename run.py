@@ -64,8 +64,8 @@ def visit_vendor(vendor):
     elif answer.lower() == "y":
         MyBool = True
         while(MyBool):
-            chosen_item = input("What would you like to trade? ")
-            if chosen_item.lower() in vendors_items:
+            chosen_item = input("What would you like to trade? ").lower()
+            if chosen_item in vendors_items:
                 i = vendors_items.index(chosen_item)
                 print("I have that item!")
                 print(f"I have this amount of that: {vendors_quantity[i]}\n")
@@ -80,7 +80,7 @@ def visit_vendor(vendor):
     else:
         print("Please answer Y or N")
 
-    return chosen_item, chosen_qnt
+    return chosen_item, chosen_qnt, luck_modifier
     
     print("What now?")
 
@@ -137,7 +137,8 @@ def main():
     chosen_vendor = game_menu()
     chosen_tuple = visit_vendor(chosen_vendor)
     print(f"I want to trade {chosen_tuple[1]} {chosen_tuple[0]}")
-    
-main()
+
+if __name__ == "__main__": 
+    main()
 
 
