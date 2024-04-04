@@ -1,8 +1,8 @@
-user = [
-    {"item": "thumbtack",
-    "value": 1,
-    "quantity": 1
-    }]
+user = {"luck modifier": 1.2,
+        "items" : [{"item": "thumbtack",
+                    "value": 1,
+                    "quantity": 1}]
+    }
 
 ron = {"welcome message": "Hello. This is my table of stuff. Trade something if you want, I don't care.",
         "sale modifer" : 1,
