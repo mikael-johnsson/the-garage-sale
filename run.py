@@ -14,8 +14,8 @@ def input_username():
     """
     Lets the user insert a username
     """
-    username = input("Enter username here:")
-    print("It is time to start the game. Let the great trading begin!\n")
+    username = input("Enter username here: ")
+    print("It is time to start the game. Let the great experiment begin!\n")
     return username
     
 def game_menu():
@@ -29,7 +29,7 @@ def game_menu():
     choice = ""
     choice_not_made = True
     while(choice_not_made):
-        selected_answer = input("Choose a path:")
+        selected_answer = input("\nChoose an option:\n")
         match selected_answer:
             case "1":
                 choice = ron
@@ -49,7 +49,7 @@ def visit_vendor(vendor):
     """
     Displays the chosen vendors inventory
     """
-
+    print("This is my inventory: \n")
     vendors_items = []
     vendors_quantity = [] #necessary??
     for i in vendor:
@@ -57,7 +57,7 @@ def visit_vendor(vendor):
         vendors_items.append(i["item"])
         vendors_quantity.append(i["quantity"])
 
-    answer = input("Would you like to make a trade? (Y/N):") #this need some error handling
+    answer = input("Would you like to make a trade? (Y/N): ") #this need some error handling
     if answer.lower() == "n":
         print("Let us go back to the menu then.")
         game_menu()
@@ -68,8 +68,8 @@ def visit_vendor(vendor):
             if chosen_item.lower() in vendors_items:
                 i = vendors_items.index(chosen_item)
                 print("I have that item!")
-                print(f"I have this amount of that: {vendors_quantity[i]}")
-                chosen_qnt = int(input("How many do you want?")) #this need some error handling
+                print(f"I have this amount of that: {vendors_quantity[i]}\n")
+                chosen_qnt = int(input("How many do you want? ")) #this need some error handling
                 if chosen_qnt <= vendors_quantity[i]:
                     print("I can make that trade")
                     MyBool = False
