@@ -51,7 +51,7 @@ def go_to_market():
     choice = ""
     choice_not_made = True
     while(choice_not_made):
-        print("1: Jim\n"
+        print("\n1: Jim\n"
         "2: Michael\n" 
         "3: Angela\n"
         "4: Kevin\n"
@@ -75,8 +75,8 @@ def go_to_market():
                 choice_not_made = False
             case _:
                 print("Something went wrong, select a number between 1-5")
-    visit_vendor(choice)
-
+    print(choice)
+    #visit_vendor(choice)
 
 def visit_vendor(vendor):
     """

@@ -38,25 +38,31 @@ jim = Vendor("Jim: Hi there, want to trade something? Take whatever you want!", 
             {"item": "magic beans", "value": 6, "quantity": 1},
             {"item": "telescope","value": 12, "quantity": 1},
             {"item": "keyboard", "value": 7, "quantity": 3}])
-"""
-michael = Vendor("welcome message", sale_m, 
+
+michael = Vendor(f"Michael: Welcome to my table {player.username}! My items are big - THAT'S WHAT SHE SAID!", 0.7, 
+                [{"item": "coffee mug","value": 0.8,"quantity": 1},
+                {"item": "reem of paper","value": 0.5,"quantity": 10}
+                {"item": "an award","value": 2,"quantity": 3}
+                {"item": "cented candle","value": 3,"quantity": 2}
+                {"item": "plasma tv","value": 9,"quantity": 1}
+                ])
+
+kevin = Vendor("Hi... I'm Kevin. This is items. We trade.", 0.8, 
+                [{"item": "pot of chili","value": 6,"quantity": 1},
+                {"item": "drum kit","value": 13,"quantity": 1}
+                {"item": "cookie","value": 0.8,"quantity":10}
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                ])
+
+angela = Vendor("welcome message", sale_m, 
                 [{"item": " ","value": ,"quantity":},
                 {"item": " ","value": ,"quantity":}
                 {"item": " ","value": ,"quantity":}
                 {"item": " ","value": ,"quantity":}
                 {"item": " ","value": ,"quantity":}
                 ])
-
-kevin = Vendor("welcome message", sale_m, 
-                [{"item": " ","value": ,"quantity":},
-                {"item": " ","value": ,"quantity":}
-                {"item": " ","value": ,"quantity":}
-                {"item": " ","value": ,"quantity":}
-                {"item": " ","value": ,"quantity":}
-                ])
-
-angela = 
 
 phyllis = 
-"""
+
                 
