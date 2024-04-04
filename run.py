@@ -14,9 +14,8 @@ def input_username():
     """
     Lets the user insert a username
     """
-    username = input("Enter username here: ")
+    player.username = input("Enter username here: ")
     print("It is time to start the game. Let the great experiment begin!\n")
-    return username
     
 def game_menu():
     """
@@ -83,18 +82,22 @@ def trade(item, quantity, vendor):
     Users trade offer is tested
     If accepted - user and vendor inventory updated
     """
-    user_value = user["items"]["value"] * user["items"]["quantity"] * user["luck modifier"]
+    player_value = player.items["value"] * player.items["quantity"] * player.luck
     vendor_value = item["value"] * quantity * vendor["sale modifier"] 
-    if user_value >= vendor_value:
+    if player_value >= vendor_value:
         new_user_item = item
-        new_vendor_item = user["items"]
+        new_vendor_item = player.items
         print("Trade went through!")
-        user["items"] = new_user_item
+        player.items = new_user_item
+        player.items["quantity"] = quantity
         vendor["items"].append(new_vendor_item)
         vendor["items"].remove(item)
+    
+        
     else:
         print("That's a bad trade for me")
     game_menu()
+    
 
 def show_inventory():
     """
@@ -135,11 +138,14 @@ def main():
     Runs the game
     """
     display_instructions()
-    username = input_username()
+    input_username()
     game_menu()
    
 
 if __name__ == "__main__": 
+    player = User(1.2, {"item": "thumbtack", "value": 1, "quantity": 1}, "")
     main()
+
+
 
 
