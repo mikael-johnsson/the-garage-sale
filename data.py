@@ -31,9 +31,32 @@ class Vendor:
         self.sale = sale_modifier
         self.items = items
 
-jim = Vendor("Hello there", 0.7, [{"item": "hair spray",
-                                    "value": 3,
-                                    "quantity": 1},
-                                    {"item": "scissor",
-                                    "value": 1,
-                                    "quantity": 2}] )
+#Vendor objects
+jim = Vendor("Jim: Hi there, want to trade something? Take whatever you want!", 0.8, 
+            [{"item": "stapler", "value": 1.2,"quantity": 1},
+            {"item": "teapot", "value": 4, "quantity": 1},
+            {"item": "magic beans", "value": 6, "quantity": 1},
+            {"item": "telescope","value": 12, "quantity": 1},
+            {"item": "keyboard", "value": 7, "quantity": 3}])
+"""
+michael = Vendor("welcome message", sale_m, 
+                [{"item": " ","value": ,"quantity":},
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                ])
+
+kevin = Vendor("welcome message", sale_m, 
+                [{"item": " ","value": ,"quantity":},
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                {"item": " ","value": ,"quantity":}
+                ])
+
+angela = 
+
+phyllis = 
+"""
+                
