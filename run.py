@@ -157,9 +157,12 @@ def show_vendor_info():
     """
     Display ino about the vendors
     """
-    print("There are five vendors at the market:\n"
-        "Ron - the grumpy man with a big mustasch. Not to keen on selling his stuff.\n"
-        "Jim - A tall, skinny guy who is always happy. Would love to trade with you!")
+    print("There are five vendors at the garage sale:\n"
+        "Jim - A tall, skinny guy who is always happy. Would love to trade with you!\n"
+        "Michael - A man in a ill fitting suit. Not the best negotiator.\n"
+        "Angela - A tiny, tiny woman with a stylish cross around her neck. Doesn't seem to care for you. \n"
+        "Kevin - A big, bald guy. His items seem to consist of mostly food and music related stuff.\n"
+        "Phyllis - Kind of looks like your grandma. Her husband seems to be with her aswell.\n")
 
 def display_score_and_exit():
     """
