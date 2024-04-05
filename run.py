@@ -138,13 +138,15 @@ def trade(item, quantity, vendor):
     if player_value >= vendor_value:
         new_user_item = item
         new_vendor_item = player.items
-        print(f"\n{vendor.name}: I will accept that deal.\n")
+        print(f"\n{vendor.name}: I will accept that deal. Here you go.\n"
+        "-- Trade went through, inventory updated --\n")
         player.items = new_user_item
         player.items["quantity"] = quantity
         vendor.items.append(new_vendor_item)
         vendor.items.remove(item)   
     else:
-        print(f"\n{vendor.name}: That's not a good trade for me.\n")
+        print(f"\n{vendor.name}: That's not a good trade for me.\n"
+        "-- Trade failed --\n")
     game_menu()
     
 
@@ -152,11 +154,11 @@ def show_inventory():
     """
     Displays the users inventory
     """
-    print(f"You have: {player.items["quantity"]} {player.items["item"].capitalize()}\n")
+    print(f"\nYou have: {player.items["quantity"]} {player.items["item"].capitalize()}\n")
 
 def show_vendor_info():
     """
-    Display ino about the vendors
+    Display info about the vendors
     """
     print("There are five vendors at the garage sale:\n"
         "Jim - A tall, skinny guy who is always happy. Would love to trade with you!\n"
