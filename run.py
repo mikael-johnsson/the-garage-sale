@@ -6,16 +6,18 @@ def display_instructions():
     """
     Displays title and instructions to the game
     """
-    print("WELCOME TO THE TRADE GAME\n")
-    print("The game is simple: trade your thumbtack with higher valued items at one of the five vendors.")
-    print("Your score is the amount of cash you receive when selling your items when leaving the market.")
+    print("WELCOME TO THE GARAGE SALE\n")
+    print("The game is simple: trade your thumbtack with higher valued items at one of the five vendors.\n"
+    "Your score is the amount of cash your inventory is worth when leaving the market.\n"
+    "Remember: the trade deal needs to be good for both you and the vendor - or they will deny the deal.\n")
+    
     
 def input_username():
     """
     Lets the user insert a username
     """
     player.username = input("Enter username here: ")
-    print("It is time to start the game. Let the great experiment begin!\n")
+    print("\nIt is time to start the game. Let the great experiment begin!\n")
     
 def game_menu():
     """
@@ -28,7 +30,7 @@ def game_menu():
         "2: Show your inventory\n" 
         "3: Show score and exit game\n"
         "4: Learn more about the vendors")
-        selected_answer = input("\nChoose an option:\n")
+        selected_answer = input("\nChoose an option: ")
         match selected_answer:
             case "1":
                 go_to_market()
@@ -57,7 +59,7 @@ def go_to_market():
         "3: Angela\n"
         "4: Kevin\n"
         "5: Phyllis")
-        selected_answer = input("\nChoose an option:\n")
+        selected_answer = input("\nChoose an option: ")
         match selected_answer:
             case "1":
                 choice = jim
