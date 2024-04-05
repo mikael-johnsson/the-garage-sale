@@ -114,8 +114,10 @@ def visit_vendor(vendor):
             while(quantity_input):
                 try:
                     chosen_qnt = int(input("How many do you want? ")) 
-                    if chosen_qnt <= items_list[(i)]["quantity"]:
-                            trade(chosen_item, chosen_qnt, vendor)
+                    if chosen_qnt == 0:
+                            print("You cannot trade for zero of my item.")
+                    elif chosen_qnt <= items_list[(i)]["quantity"]:
+                        trade(chosen_item, chosen_qnt, vendor)
                     else: 
                         print("I dont have that many")
                         game_menu()
