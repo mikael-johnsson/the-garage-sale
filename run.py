@@ -174,11 +174,11 @@ def display_score_and_exit():
     while (exit_answer):
         answer = input("Are you ready to exit game? (Y/N):").lower()
         if answer == "y":
-            print("You pressed y")
+            print("Thank you for playing!")
             exit()
             exit_answer = False
         elif answer == "n":
-            print("you pressed n")
+            print("Let's go back to the menu and trade some more!")
             game_menu()
             exit_answer = False
         else:
