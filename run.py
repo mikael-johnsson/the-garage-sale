@@ -104,9 +104,8 @@ def visit_vendor(vendor):
                     chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
                     item_input = False
                     i = chosen_number - 1
-                    chosen_item = items_list[(i)]
-                    print("I have that item!")
-                    print(f"I have this amount of that: {items_list[(i)]["quantity"]}\n")
+                    chosen_item = items_list[i]
+                    print(f"\nSure thing, I have this amount of {items_list[i]["item"]}: {items_list[i]["quantity"]}\n")
                 except ValueError:
                     print(f"Something went wrong, select a number between 1-{len(items_list)}")
 
@@ -116,10 +115,10 @@ def visit_vendor(vendor):
                     chosen_qnt = int(input("How many do you want? ")) 
                     if chosen_qnt == 0:
                             print("You cannot trade for zero of my item.")
-                    elif chosen_qnt <= items_list[(i)]["quantity"]:
+                    elif chosen_qnt <= items_list[i]["quantity"]:
                         trade(chosen_item, chosen_qnt, vendor)
                     else: 
-                        print("I dont have that many")
+                        print("I don't have that many")
                         game_menu()
                 except ValueError:
                     print(f"Something went wrong, select a number")
