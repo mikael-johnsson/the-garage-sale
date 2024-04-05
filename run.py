@@ -189,15 +189,18 @@ def display_score_and_exit():
     while (exit_answer):
         answer = input("Are you ready to exit game? (Y/N):").lower()
         if answer == "y":
-            print("Thank you for playing!")
+            print(Fore.GREEN + "Thank you for playing!")
+            print(Style.RESET_ALL)
             exit()
             exit_answer = False
         elif answer == "n":
-            print("Let's go back to the menu and trade some more!")
+            print(Fore.GREEN + "Let's go back to the menu and trade some more!")
+            print(Style.RESET_ALL)
             game_menu()
             exit_answer = False
         else:
-            print("Something went wrong, please input the letter 'Y' or 'N'")
+            print(Fore.RED + "Something went wrong, please input the letter 'Y' or 'N'")
+            print(Style.RESET_ALL)
 
 def main():
     """
