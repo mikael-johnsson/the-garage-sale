@@ -136,13 +136,13 @@ def trade(item, quantity, vendor):
     if player_value >= vendor_value:
         new_user_item = item
         new_vendor_item = player.items
-        print("Trade went through!")
+        print("\nI will accept that deal.")
         player.items = new_user_item
         player.items["quantity"] = quantity
         vendor.items.append(new_vendor_item)
         vendor.items.remove(item)   
     else:
-        print("That's a bad trade for me")
+        print("That's not a good trade for me. Get out of here!")
     game_menu()
     
 
