@@ -1,6 +1,5 @@
 # python3 run.py
 from data import *
-from tabulate import tabulate
 from colorama import Fore, Back, Style
 
 def display_instructions():
@@ -19,7 +18,7 @@ def input_username():
     """
     Lets the user insert a username
     """
-    player.username = input("Enter username here: ")
+    player.username = input("Enter username here:\n")
     print(Fore.GREEN + "\nIt is time to start the game. Let the great experiment begin!")
     print(Style.RESET_ALL)
     
@@ -34,7 +33,7 @@ def game_menu():
         "2: Show your inventory\n" 
         "3: Show score and exit game\n"
         "4: Learn more about the vendors")
-        selected_answer = input("\nChoose an option: ")
+        selected_answer = input("\nChoose an option:\n")
         match selected_answer:
             case "1":
                 go_to_market()
@@ -64,7 +63,7 @@ def go_to_market():
         "3: Angela\n"
         "4: Kevin\n"
         "5: Phyllis")
-        selected_answer = input("\nChoose an option: ")
+        selected_answer = input("\nChoose an option:\n")
         match selected_answer:
             case "1":
                 choice = jim
@@ -98,7 +97,7 @@ def visit_vendor(vendor):
     
     trade_input = True
     while (trade_input):
-        answer = input("\nWould you like to make a trade? (Y/N): ")
+        answer = input("\nWould you like to make a trade? (Y/N):\n")
         if answer.lower() == "n":
             trade_input = False
             print("\nLet us go back to the menu then.")
@@ -109,7 +108,7 @@ def visit_vendor(vendor):
             item_input = True
             while(item_input):
                 try:
-                    chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}): "))
+                    chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}):\n"))
                     item_input = False
                     i = chosen_number - 1
                     chosen_item = items_list[i]
@@ -121,7 +120,7 @@ def visit_vendor(vendor):
             quantity_input = True
             while(quantity_input):
                 try:
-                    chosen_qnt = int(input("How many do you want? ")) 
+                    chosen_qnt = int(input("How many do you want?\n")) 
                     if chosen_qnt == 0:
                             print(Fore.RED + "You cannot trade for zero of my item.")
                             print(Style.RESET_ALL)
@@ -187,7 +186,7 @@ def display_score_and_exit():
 
     exit_answer = True
     while (exit_answer):
-        answer = input("Are you ready to exit game? (Y/N):").lower()
+        answer = input("Are you ready to exit game? (Y/N):\n").lower()
         if answer == "y":
             print(Fore.GREEN + "Thank you for playing!")
             print(Style.RESET_ALL)
