@@ -33,7 +33,7 @@ jim = Vendor("Jim", "Jim: Hi there, want to trade something? Take whatever you w
 michael = Vendor("Michael", f"Michael: Welcome to my table{player.username}! My items are big - THAT'S WHAT SHE SAID!", 0.6, 
                 [{"item": "coffee mug","value": 0.8},
                 {"item": "reem of paper", "value": 0.5},
-                {"item": "an award","value": 2},
+                {"item": "award","value": 2},
                 {"item": "cented candle","value": 3},
                 {"item": "plasma tv","value": 9}
                 ])
