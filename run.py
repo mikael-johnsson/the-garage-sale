@@ -38,7 +38,6 @@ def game_menu():
     Displays a menu to allow the user to choose what to do in the game
     """
     choice = ""
-    choice_not_made = True
     while(True):
         print("1: Go to the garage sale\n"
         "2: Show your inventory\n" 
@@ -48,11 +47,9 @@ def game_menu():
         match selected_answer:
             case "1":
                 go_to_market()
-                choice_not_made = False
             case "2":
                 show_inventory()
             case "3":
-                choice_not_made = False
                 display_score_and_exit()
             case "4":
                 show_vendor_info()
