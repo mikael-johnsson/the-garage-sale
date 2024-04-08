@@ -100,10 +100,13 @@ def visit_vendor(vendor):
     while(item_input):
         try:
             chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}):\n"))
-            item_input = False
-            i = chosen_number - 1
-            chosen_item = items_list[i]
-            trade(chosen_item, vendor)
+            if chosen_number > 0 and chosen_number <= len(items_list):
+                item_input = False
+                i = chosen_number - 1
+                chosen_item = items_list[i]
+                trade(chosen_item, vendor)
+            else: 
+                print(f"Something went wrong, select a number between 1-{len(items_list)}")
         except ValueError:
             print(f"Something went wrong, select a number between 1-{len(items_list)}")
 
