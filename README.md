@@ -22,29 +22,39 @@ The Garage Sale game is a quick and in some way simple game. The user chooses it
 ### How to play
 The user start with an inventory of a thumbtack. They can then choose to meet a vendor to trade that item with one of the five items the vendor possesses. If the vendor find the trade acceptable, the item changes hand. Aswell does the thumbtack. Hopefully, the users new item is more valuble than the thumbtack.
 
-Some vendors are easier to trade with than other.
+Some vendors are easier to trade with than other. Information about which to favor is available from the game menu.
 
-### Project Goals
+When the user feels they have obtained the highest valuble item there is - they can go to the exit of the market and find out how valuble their item is. That value is their final score.
+### User Stories
+
+#### Project Goals
 The goals of the project are:
 * Create a game with no errors or crashes
 * Deply the game in a way that it's playable when access to link is given
 * Have recurring users (not measurable at the moment)
 
-### User Goals
+#### User Goals
 As a user, I want to:
 * In a clear and effective way, recieve the instructions to the game
 * Play a game with no errors or crashes
 * Feel the game's difficulty level is balanced
 * Be able to see my final score
 
-### User Stories
+
 
 ## Features
 ### Flowchart
-Below is the flowchart created before the building of the application started.
+Below is the flowchart for the application:
 
-![Image of the flowchart](assets/images/flowchart_trade_game_V1.png)
+![Flowchart for the application](assets/images/Flowchart_the_garage_sale_V2.png)
+
+For readability purposes the vendor section of the flowchart has been taken out and specified in it's own flowchart. Not included in the flowchart are the big amounts of input error handling happening throughout the application.
 ### Existing Features
+**Instructions**
+The first thing the user meets are the instructions of the game. They explain the goal of the game, when and how to see the final score and also when and how to exit the game.
+
+**Username input**
+The user is asked to input a username. The username is later used for a more personal touch to the game. ADD CONTENT HERE WHEN USERNAME BUG FIXED
 ### Future Features
 
 ## Technologies Used
