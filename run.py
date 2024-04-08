@@ -19,7 +19,7 @@ def display_instructions():
     
 def input_username():
     """
-    Lets the user insert a username
+    Lets the user input a username
     """
     player.username = input("Enter username here:\n")
     print(Fore.GREEN + "\nIt is time to start the game."
