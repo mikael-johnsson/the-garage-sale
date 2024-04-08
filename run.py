@@ -21,10 +21,17 @@ def input_username():
     """
     Lets the user input a username
     """
-    player.username = input("Enter username here:\n")
-    print(Fore.GREEN + "\nIt is time to start the game."
-    "Let the great experiment begin!")
-    print(Style.RESET_ALL)
+    username_input = False
+    while(username_input == False)
+        player.username = input("Enter username here:\n")
+        if player.username == "":
+            print(Fore.RED + "Please enter a valid username")
+            print(Style.RESET_ALL)
+        else:
+            print(Fore.GREEN + "\nIt is time to start the game."
+            "Let the great experiment begin!")
+            print(Style.RESET_ALL)
+            username_input = True
     
 def game_menu():
     """
