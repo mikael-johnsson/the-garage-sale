@@ -46,7 +46,8 @@ def game_menu():
             case "4":
                 show_vendor_info()
             case _:
-                print("Something went wrong, select a number between 1-3")
+                print(Fore.RED + "Something went wrong, select a number between 1-4")
+                print(Style.RESET_ALL)
     
 
 def go_to_market():
@@ -81,7 +82,8 @@ def go_to_market():
                 choice = phyllis
                 choice_not_made = False
             case _:
-                print("Something went wrong, select a number between 1-5")
+                print(Fore.RED + "Something went wrong, select a number between 1-5")
+                print(Style.RESET_ALL)
     visit_vendor(choice)
 
 def visit_vendor(vendor):
