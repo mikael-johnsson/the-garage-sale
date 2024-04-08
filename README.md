@@ -51,15 +51,66 @@ Below is the flowchart for the application:
 For readability purposes the vendor section of the flowchart has been taken out and specified in it's own flowchart. Not included in the flowchart are the big amounts of input error handling happening throughout the application.
 ### Existing Features
 **Instructions**
+
 The first thing the user meets are the instructions of the game. They explain the goal of the game, when and how to see the final score and also when and how to exit the game.
 
 **Username input**
-The user is asked to input a username. The username is later used for a more personal touch to the game. ADD CONTENT HERE WHEN USERNAME BUG FIXED
+
+The user is asked to input a username. The username is later used for a more personal touch to the game. If the user does not provide the application with a username or inputs only blank spaces, an error message is shown and the user gets another try.
+
+**Game menu**
+
+The game menu stands out with it's magenta color. It's to here the user is redirected after every feature is worked through.
+
+From the game menu you can reach:
+* the vendors
+* your inventory
+* your score and way to exit the game
+* info about the vendors
+
+**Show inventory**
+
+If "show inventory" option is chosen, the users inventory will displayed. Then returns the user to "Game menu".
+
+**Show score and exit**
+
+If "show score and exit" option is chosen, the value of the users current inventory i.e. the current score. The user is thereafter given to option to exit the game or continue playing.
+
+**Learn more about the vendors**
+
+If "learn more about the vendors" option is chosen, information about the five different vendors are displayed. A cunning player obtain information which of the different vendors are easy / hard to trade with. Then returns the user to "Game menu".
+
+**Go to the garage sale**
+
+If "Go to garage sale" option is chosen, the user is displayed with five different vendors to trade with.
+
+**Vendors**
+
+When meeting with the vendors, their five items are displayed and the user is asked with item they would like to trade.
+
+**Trading**
+
+If the vendor find the users item to be worth equal to or more then the chosen item the, trade is successful. A message is shown and the user is taken back to the game menu and can now find their new item in their inventory.
+
+If the vendor find the users item to be worth less than the chosen item, a message is shown and the user is taken back to the game menu.
+
 ### Future Features
+In the feature it would be prefferable to implement these features:
+ * A quantity factor (a vendor can possess several items of the same category)
+ * An online highscore, to allow the user to compare themselves to other users
+ * A feature to allow the user to negotiate with or influate the vendor
 
 ## Technologies Used
 ### Languages
+This application was created with Python version 3.12.2.
 ### Libraries & Tools
+Colorama - to implement colors to the application.
+
+Git - for version control
+
+Github - to save & store files during development
+
+Lucidchart - for flowcharts
 
 ## Deployment
 ### Heroku
