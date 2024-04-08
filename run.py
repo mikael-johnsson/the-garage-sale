@@ -141,7 +141,7 @@ def trade(item, vendor):
         vendor.items.remove(item)   
     else:
         print(Fore.CYAN + f"\n{vendor.name}: That's not a good trade for me."
-        "Your {player.items["item"]} is not worth enough.")
+        f"Your {player.items["item"]} is not worth enough.")
         print(Style.RESET_ALL)
         print("-- Trade failed --\n")
     game_menu()
