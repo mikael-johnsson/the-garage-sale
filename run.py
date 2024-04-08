@@ -21,7 +21,7 @@ def input_username():
     """
     while(True):
         player.username = input("Enter username here:\n")
-        if player.username == "":
+        if not player.username.strip():
             print(Fore.RED + "Please enter a username")
             print(Style.RESET_ALL)
         else:

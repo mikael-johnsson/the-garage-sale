@@ -10,6 +10,7 @@ class User:
     def inventory(self):
         print(self.items["item"].capitalize())
 
+#User object
 player = User(1.2, {"item": "thumbtack", "value": 1}, "")
 
 class Vendor:
