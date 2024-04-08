@@ -1,4 +1,3 @@
-# python3 run.py
 from data import *
 from colorama import Fore, Back, Style
 
