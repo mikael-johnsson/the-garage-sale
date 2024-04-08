@@ -39,6 +39,8 @@ def game_menu():
     """
     choice = ""
     while(True):
+        print(Fore.MAGENTA + "GAME MENU")
+        print(Style.RESET_ALL)
         print("1: Go to the garage sale\n"
         "2: Show your inventory\n" 
         "3: Show score and exit game\n"
@@ -154,13 +156,17 @@ def show_inventory():
     """
     Displays the users inventory
     """
-    print(f"\nYou have a: {player.items["item"].capitalize()}\n")
+    print(Fore.GREEN + "\nINVENTORY")
+    print(Style.RESET_ALL)
+    print(f"You have a: {player.items["item"].capitalize()}\n")
 
 def show_vendor_info():
     """
     Display info about the vendors
     """
-    print("There are five vendors at the garage sale:\n"
+    print(Fore.GREEN + "\nThere are five vendors at the garage sale:")
+    print(Style.RESET_ALL)
+    print(
         "Jim - A tall, skinny guy who is always happy."
         " Would love to trade with you!\n"
         "Michael - A man in a ill fitting suit. Not the best negotiator.\n"
@@ -175,6 +181,8 @@ def display_score_and_exit():
     """
     Displays score and exits game
     """
+    print(Fore.GREEN + "\nSCORE")
+    print(Style.RESET_ALL)
     print(f"Your inventory is worth ${player.items["value"]},"
     f" good job {player.username}!")
 
