@@ -90,62 +90,32 @@ def visit_vendor(vendor):
     """
     Displays the chosen vendors inventory
     """
-    
     print(Fore.GREEN + f"\n{vendor.welcome}")
     print(Style.RESET_ALL)
     items_list = vendor.items
     for item in items_list:
-        print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}, {item["quantity"]} pcs")
+        print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}")
     
-    trade_input = True
-    while (trade_input):
-        answer = input("\nWould you like to make a trade? (Y/N):\n")
-        if answer.lower() == "n":
-            trade_input = False
-            print("\nLet us go back to the menu then.")
-            game_menu()
+    item_input = True
+    while(item_input):
+        try:
+            chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}):\n"))
+            item_input = False
+            i = chosen_number - 1
+            chosen_item = items_list[i]
+            trade(chosen_item, vendor)
+        except ValueError:
+            print(f"Something went wrong, select a number between 1-{len(items_list)}")
 
-        elif answer.lower() == "y":
-            trade_input = False
-            item_input = True
-            while(item_input):
-                try:
-                    chosen_number = int(input(f"What would you like to trade? (1-{len(items_list)}):\n"))
-                    item_input = False
-                    i = chosen_number - 1
-                    chosen_item = items_list[i]
-                    print(Fore.GREEN + f"\nSure thing, I have this amount of {items_list[i]["item"]}: {items_list[i]["quantity"]}")
-                    print(Style.RESET_ALL)
-                except ValueError:
-                    print(f"Something went wrong, select a number between 1-{len(items_list)}")
+            
 
-            quantity_input = True
-            while(quantity_input):
-                try:
-                    chosen_qnt = int(input("How many do you want?\n")) 
-                    if chosen_qnt == 0:
-                            print(Fore.RED + "You cannot trade for zero of my item.")
-                            print(Style.RESET_ALL)
-                    elif chosen_qnt <= items_list[i]["quantity"]:
-                        trade(chosen_item, chosen_qnt, vendor)
-                    else: 
-                        print(Fore.BLUE + "I don't have that many")
-                        print(Style.RESET_ALL)
-                        game_menu()
-                except ValueError:
-                    print(Fore.RED + f"Something went wrong, select a number")
-                    print(Style.RESET_ALL)
-
-        else:
-            print("Please answer Y or N")
-
-def trade(item, quantity, vendor):
+def trade(item, vendor):
     """
     Users trade offer is tested
     If accepted - user and vendor inventory updated
     """
-    player_value = player.items["value"] * player.items["quantity"] * player.luck
-    vendor_value = item["value"] * quantity * vendor.sale
+    player_value = player.items["value"] * player.luck
+    vendor_value = item["value"] * vendor.sale
     if player_value >= vendor_value:
         new_user_item = item
         new_vendor_item = player.items
@@ -153,7 +123,6 @@ def trade(item, quantity, vendor):
         print(Style.RESET_ALL)
         print("-- Trade went through, inventory updated --\n")
         player.items = new_user_item
-        player.items["quantity"] = quantity
         vendor.items.append(new_vendor_item)
         vendor.items.remove(item)   
     else:
