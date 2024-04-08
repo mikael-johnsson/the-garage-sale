@@ -113,8 +113,7 @@ def visit_vendor(vendor):
                 chosen_item = items_list[i]
                 trade(chosen_item, vendor)
             else: 
-                print(f"Something went wrong, select a number between "
-                f"1-{len(items_list)}")
+                raise ValueError
         except ValueError:
             print(f"Something went wrong, select a number between "
                 f"1-{len(items_list)}")
