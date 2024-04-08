@@ -136,7 +136,7 @@ def show_inventory():
     """
     Displays the users inventory
     """
-    print(f"\nYou have: {player.items["quantity"]} {player.items["item"].capitalize()}\n")
+    print(f"\nYou have: {player.items["item"].capitalize()}\n")
 
 def show_vendor_info():
     """
