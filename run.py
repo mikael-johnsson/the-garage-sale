@@ -15,13 +15,10 @@ def display_instructions():
     "Remember: the trade deal needs to be good for both you and the vendor -"
     " or they will deny the deal.\n")
     
-    
-    
 def input_username():
     """
     Lets the user input a username
     """
-    
     while(True):
         player.username = input("Enter username here:\n")
         if player.username == "":
@@ -60,7 +57,6 @@ def game_menu():
                 "between 1-4")
                 print(Style.RESET_ALL)
     
-
 def go_to_market():
     """
     Allows user to choose which vendor to meet
@@ -107,7 +103,6 @@ def visit_vendor(vendor):
     items_list = vendor.items
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}")
-    
     item_input = True
     while(item_input):
         try:
@@ -124,8 +119,6 @@ def visit_vendor(vendor):
         except ValueError:
             print(f"Something went wrong, select a number between "
                 f"1-{len(items_list)}")
-
-            
 
 def trade(item, vendor):
     """
@@ -150,7 +143,6 @@ def trade(item, vendor):
         print(Style.RESET_ALL)
         print("-- Trade failed --\n")
     game_menu()
-    
 
 def show_inventory():
     """
@@ -185,21 +177,19 @@ def display_score_and_exit():
     print(Style.RESET_ALL)
     print(f"Your inventory is worth ${player.items["value"]},"
     f" good job {player.username}!")
-
-    exit_answer = True
-    while (exit_answer):
+    while (True):
         answer = input("Are you ready to exit game? (Y/N):\n").lower()
         if answer == "y":
             print(Fore.GREEN + "Thank you for playing!")
             print(Style.RESET_ALL)
             exit()
-            exit_answer = False
+            break
         elif answer == "n":
             print(Fore.GREEN + "Let's go back to the menu"
             " and trade some more!")
             print(Style.RESET_ALL)
             game_menu()
-            exit_answer = False
+            break
         else:
             print(Fore.RED + "Something went wrong, please input"
             " the letter 'Y' or 'N'")
@@ -212,7 +202,6 @@ def main():
     display_instructions()
     input_username()
     game_menu()
-   
 
 if __name__ == "__main__": 
     main()
