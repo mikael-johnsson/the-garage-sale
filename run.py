@@ -64,8 +64,7 @@ def go_to_market():
     Allows user to choose which vendor to meet
     """
     choice = ""
-    choice_not_made = True
-    while(choice_not_made):
+    while(True):
         print(Fore.GREEN + "\nWelcome to the garage sale! Choose a"
         " table to visit.")
         print(Style.RESET_ALL)
@@ -78,19 +77,19 @@ def go_to_market():
         match selected_answer:
             case "1":
                 choice = jim
-                choice_not_made = False
+                break
             case "2":
                 choice = michael
-                choice_not_made = False
+                break
             case "3":
                 choice = angela
-                choice_not_made = False
+                break
             case "4":
                 choice = kevin
-                choice_not_made = False
+                break
             case "5":
                 choice = phyllis
-                choice_not_made = False
+                break
             case _:
                 print(Fore.RED + "Something went wrong, select a number "
                 "between 1-5")
