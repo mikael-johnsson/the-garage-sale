@@ -24,7 +24,7 @@ class Vendor:
 
 #Vendor objects
 jim = Vendor("Jim", "Jim: Hi there, want to trade something?"
-            "Take whatever you want!", 
+            " Take whatever you want!", 
             0.7, 
             [{"item": "stapler", "value": 1.3},
             {"item": "teapot", "value": 3},
@@ -33,7 +33,7 @@ jim = Vendor("Jim", "Jim: Hi there, want to trade something?"
             {"item": "keyboard", "value": 5.4}])
 
 michael = Vendor("Michael", "Michael: Welcome to my table!"
-                "My items are so big- THAT'S WHAT SHE SAID!", 
+                " My items are so big- THAT'S WHAT SHE SAID!", 
                 0.6, 
                 [{"item": "coffee mug","value": 0.8},
                 {"item": "reem of paper", "value": 0.5},
@@ -52,7 +52,7 @@ kevin = Vendor("Kevin", "Kevin: Hi... I'm Kevin. This is items. We trade.",
                 ])
 
 angela = Vendor("Angela", "Angela: Good afternoon. Before you I lay"
-                "several quite valuble objects.", 
+                " several quite valuble objects.", 
                 1, 
                 [{"item": "wood cross","value": 3.7},
                 {"item": "baby jesus statue","value": 5.9},
@@ -62,7 +62,7 @@ angela = Vendor("Angela", "Angela: Good afternoon. Before you I lay"
                 ])
 
 phyllis = Vendor("Phyllis", "Phyllis: Oh, hello! Please, come take a look."
-                "Have you met my husband, Bob Vance, Vance Refrigiration?", 
+                " Have you met my husband, Bob Vance, Vance Refrigiration?", 
                 0.8,
                 [{"item": "used mini fridge","value": 8.2},
                 {"item": "oven mitt","value": 2.5},

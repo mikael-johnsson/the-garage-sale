@@ -9,11 +9,11 @@ def display_instructions():
     print(Fore.GREEN + "WELCOME TO THE GARAGE SALE") 
     print(Style.RESET_ALL)
     print("The game is simple: trade your thumbtack with higher valued items"
-    "at one of the five vendors.\n"
+    " at one of the five vendors.\n"
     "Your score is the amount of cash your inventory is worth when leaving"
-    "the market.\n"
+    " the market.\n"
     "Remember: the trade deal needs to be good for both you and the vendor -"
-    "or they will deny the deal.\n")
+    " or they will deny the deal.\n")
     
     
     
@@ -22,14 +22,14 @@ def input_username():
     Lets the user input a username
     """
     username_input = False
-    while(username_input == False)
+    while(username_input == False):
         player.username = input("Enter username here:\n")
         if player.username == "":
             print(Fore.RED + "Please enter a valid username")
             print(Style.RESET_ALL)
         else:
             print(Fore.GREEN + "\nIt is time to start the game."
-            "Let the great experiment begin!")
+            " Let the great experiment begin!")
             print(Style.RESET_ALL)
             username_input = True
     
@@ -39,7 +39,7 @@ def game_menu():
     """
     choice = ""
     choice_not_made = True
-    while(choice_not_made):
+    while(True):
         print("1: Go to the garage sale\n"
         "2: Show your inventory\n" 
         "3: Show score and exit game\n"
@@ -70,7 +70,7 @@ def go_to_market():
     choice_not_made = True
     while(choice_not_made):
         print(Fore.GREEN + "\nWelcome to the garage sale! Choose a"
-        "table to visit.")
+        " table to visit.")
         print(Style.RESET_ALL)
         print("1: Jim\n"
         "2: Michael\n" 
@@ -95,7 +95,7 @@ def go_to_market():
                 choice = phyllis
                 choice_not_made = False
             case _:
-                print(Fore.RED + "Something went wrong, select a number"
+                print(Fore.RED + "Something went wrong, select a number "
                 "between 1-5")
                 print(Style.RESET_ALL)
     visit_vendor(choice)
@@ -113,7 +113,7 @@ def visit_vendor(vendor):
     item_input = True
     while(item_input):
         try:
-            chosen_number = int(input("What would you like to trade?"
+            chosen_number = int(input("What would you like to trade? "
             f"(1-{len(items_list)}):\n"))
             if chosen_number > 0 and chosen_number <= len(items_list):
                 item_input = False
@@ -121,10 +121,10 @@ def visit_vendor(vendor):
                 chosen_item = items_list[i]
                 trade(chosen_item, vendor)
             else: 
-                print(f"Something went wrong, select a number between"
+                print(f"Something went wrong, select a number between "
                 f"1-{len(items_list)}")
         except ValueError:
-            print(f"Something went wrong, select a number between"
+            print(f"Something went wrong, select a number between "
                 f"1-{len(items_list)}")
 
             
@@ -140,14 +140,14 @@ def trade(item, vendor):
         new_user_item = item
         new_vendor_item = player.items
         print(Fore.GREEN + f"\n{vendor.name}: I will accept that deal."
-         "Here you go.")
+         " Here you go.")
         print(Style.RESET_ALL)
         print("-- Trade went through, inventory updated --\n")
         player.items = new_user_item
         vendor.items.append(new_vendor_item)
         vendor.items.remove(item)   
     else:
-        print(Fore.CYAN + f"\n{vendor.name}: That's not a good trade for me."
+        print(Fore.CYAN + f"\n{vendor.name}: That's not a good trade for me. "
         f"Your {player.items["item"]} is not worth enough.")
         print(Style.RESET_ALL)
         print("-- Trade failed --\n")
@@ -158,7 +158,7 @@ def show_inventory():
     """
     Displays the users inventory
     """
-    print(f"\nYou have: {player.items["item"].capitalize()}\n")
+    print(f"\nYou have a: {player.items["item"].capitalize()}\n")
 
 def show_vendor_info():
     """
@@ -166,21 +166,21 @@ def show_vendor_info():
     """
     print("There are five vendors at the garage sale:\n"
         "Jim - A tall, skinny guy who is always happy."
-        "Would love to trade with you!\n"
+        " Would love to trade with you!\n"
         "Michael - A man in a ill fitting suit. Not the best negotiator.\n"
         "Angela - A tiny, tiny woman with a stylish cross around her neck."
-        "Doesn't seem to care for you. \n"
+        " Doesn't seem to care for you. \n"
         "Kevin - A big, bald guy. His items seem to consist of mostly"
-        "food and music related stuff.\n"
+        " food and music related stuff.\n"
         "Phyllis - Kind of looks like your grandma. Her husband seems"
-        "to be with her aswell.\n")
+        " to be with her aswell.\n")
 
 def display_score_and_exit():
     """
     Displays score and exits game
     """
     print(f"Your inventory is worth ${player.items["value"]},"
-    f"good job {player.username}!")
+    f" good job {player.username}!")
 
     exit_answer = True
     while (exit_answer):
@@ -192,13 +192,13 @@ def display_score_and_exit():
             exit_answer = False
         elif answer == "n":
             print(Fore.GREEN + "Let's go back to the menu"
-            "and trade some more!")
+            " and trade some more!")
             print(Style.RESET_ALL)
             game_menu()
             exit_answer = False
         else:
             print(Fore.RED + "Something went wrong, please input"
-            "the letter 'Y' or 'N'")
+            " the letter 'Y' or 'N'")
             print(Style.RESET_ALL)
 
 def main():
