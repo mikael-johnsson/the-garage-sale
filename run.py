@@ -13,7 +13,7 @@ def display_instructions():
           "Your score is the amount of cash your inventory is worth when"
           " leaving the market. If you are really good you reach the most"
           " valuble item - the telescope.\n"
-          "Remember: the trade deal needs to be good for both you and"
+          "Remember: the trade deal needs to be good for"
           " the vendor - or they will deny the deal.\n")
 
 
@@ -54,7 +54,7 @@ def game_menu():
                 show_vendor_info()
             case _:
                 print(Fore.RED + "Something went wrong, select a number"
-                                 "between 1-4\n")
+                                 " between 1-4\n")
 
 
 def go_to_market():

@@ -39,7 +39,6 @@ As a user, I want to:
 * Be able to see my final score
 
 
-
 ## Features
 ### Flowchart
 Below is the flowchart for the application:
