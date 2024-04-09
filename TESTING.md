@@ -7,12 +7,12 @@ most likely to be willing to trade.
 The game is inspired by *The Office* episode *Garage Sale*.
 
 
-img of site
+![Screenshot of the program at the game menu](assets/images/the_garage_sale_site_img.png)
 
 
-Find the site [here](https://the-garage-sale-60683b5891c9.herokuapp.com/)
+Find the site [**here**](https://the-garage-sale-60683b5891c9.herokuapp.com/)
 
-Find the link to the Readme [here](README.md)
+Find the link to the Readme [**here**](README.md)
 
 ## Table of Contents
 * [Automated testing]()
