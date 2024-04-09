@@ -69,9 +69,13 @@ For readability purposes the vendor section of the flowchart has been taken out 
 
 The first thing the user meets are the instructions of the game. They explain the goal of the game, when and how to see the final score and also when and how to exit the game.
 
+![Screenshot of the game instructions](assets/images/features_instructions.png)
+
 **Username input**
 
 The user is asked to input a username. The username is later used for a more personal touch to the game. If the user does not provide the application with a username or inputs only blank spaces, an error message is shown and the user gets another try.
+
+![Screeenshot of the username input](assets/images/features_username.png)
 
 **Game menu**
 
@@ -83,31 +87,47 @@ From the game menu you can reach:
 * your score and way to exit the game
 * info about the vendors
 
+![Screenshot of the game menu](assets/images/features_game_menu.png)
+
 **Show inventory**
 
 If "show inventory" option is chosen, the users inventory will displayed. Then returns the user to "Game menu".
+
+![Screenshot of the show inventory feature](assets/images/features_inventory.png)
 
 **Show score and exit**
 
 If "show score and exit" option is chosen, the value of the users current inventory, i.e. the current score, is displayed. The user is thereafter given to option to exit the game or continue playing.
 
+![Screenshot of the show score and exit function](assets/images/features_show_score.png)
+
 **Learn more about the vendors**
 
 If "learn more about the vendors" option is chosen, information about the five different vendors are displayed. A cunning player obtain information which of the different vendors are easy / hard to trade with. Then returns the user to "Game menu".
+
+![Screenshot of the learn more about the vendors feature](assets/images/features_show_vendor_info.png)
 
 **Go to the garage sale**
 
 If "Go to garage sale" option is chosen, the user is displayed with five different vendors to trade with.
 
+![Screenshot of the garage sale menu](assets/images/features_garage_sale.png)
+
 **Vendors**
 
 When meeting with the vendors, their five items are displayed and the user is asked which item they would like to trade.
+
+![Screenshot of the vendors item menu](assets/images/features_vendors.png)
 
 **Trading**
 
 If the vendor find the users item to be worth equal to or more then the chosen item the trade is successful. A message is shown and the user is taken back to the game menu and can now find their new item in their inventory.
 
 If the vendor find the users item to be worth less than the chosen item, a message is shown and the user is taken back to the game menu.
+
+![Screenshot of a successful trade](assets/images/features_trade_success.png)
+
+![Screenshot of an unsuccessful trade](assets/images/features_trade_unsuccess.png)
 
 ### Future Features
 In the feature it would be prefferable to implement these features:
