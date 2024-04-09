@@ -63,3 +63,31 @@ All errors were fixed and the submitted code features no validation errors.
 |Make a successful trade|Select item vendor is willing to trade|User and vendor inventory updates, successful trade message displayed|Valid|
 |Make an unsuccessful trade|Select item vendor is not willing to trade|Unsuccessful trade message displayed|Valid|
 ### Bugs
+Two large bugs were discovered during the development of the application.
+
+**Quantity zero bug**
+
+During development there was an idea of each item having a quantity. The user could trade their thumbtack with perhaps two (out of three) used cat toys. The user were then allowed to choose how many of the specific item they wanted to trade (if the vendor had access to that amount).
+
+When chosen "0", the trade went through and the users inventory now consisted of 0 "item". New trades were impossible. The entire quantity factor was removed and the user and the vendors can now only possess 1 of each item.
+
+*Screenshot of the bugs outcome*
+
+![Screenshot of the bugs outcome](assets/images/inventory_zero_bug.png)
+
+*Screenshot of the code*
+
+![Screenshot of the code](assets/images/inventory_zero_bug_2.png)
+
+**Deployment bug**
+
+When the application were first deployed to Heroku, a SyntaxError prevented it from starting. Heroku did not recognize the Match keyword. After some research the reason for the error were found in the CI Slack channel #project-portfolio-3.
+
+The match keyword is not compatible with all versions of Python. An addition of the version used to create the application (Python 3.12.2) was made to runtime.txt. The application could now start.
+
+*Screenshot of the Heroku error message*
+
+![Screenshot of the Heroku error message](assets/images/deployment_bug_match.png)
+
+*Screenshot of the solution*
+![Screenshot of the solution](assets/images/deployment_bug_2.png)
