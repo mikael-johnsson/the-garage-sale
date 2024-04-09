@@ -1,6 +1,6 @@
 # The Garage Sale
 The Garage Sale is a trading game - the user visits a garage sale and tries to
-trade up from thumbtack to the highest valuble item. There are no prices at
+trade up from thumbtack to the highest valuble item - the telescope. There are no prices at
 the garage sale, the user must figure out which items the vendors are 
 most likely to be willing to trade.
 
