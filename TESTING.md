@@ -7,7 +7,7 @@ most likely to be willing to trade.
 The game is inspired by *The Office* episode *Garage Sale*.
 
 
-![Screenshot of the program at the game menu](assets/images/the_garage_sale_site_img.png)
+![Screenshot of the program at the game menu](assets/images/garage_sale_site_new.png)
 
 
 Find the site [**here**](https://the-garage-sale-60683b5891c9.herokuapp.com/)
@@ -90,4 +90,5 @@ The match keyword is not compatible with all versions of Python. An addition of 
 ![Screenshot of the Heroku error message](assets/images/deployment_bug_match.png)
 
 *Screenshot of the solution*
+
 ![Screenshot of the solution](assets/images/deployment_bug_2.png)
