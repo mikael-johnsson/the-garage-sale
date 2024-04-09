@@ -1,12 +1,12 @@
 from data import *
-from colorama import Fore, Back, Style
+from colorama import Fore, Back, Style, init
+init(autoreset = True)
 
 def display_instructions():
     """
     Displays title and instructions to the game
     """
-    print(Fore.GREEN + "WELCOME TO THE GARAGE SALE") 
-    print(Style.RESET_ALL)
+    print(Fore.GREEN + "WELCOME TO THE GARAGE SALE\n") 
     print("The game is simple: trade your thumbtack with higher valued items"
     " at one of the five vendors.\n"
     "Your score is the amount of cash your inventory is worth when leaving"
@@ -21,12 +21,10 @@ def input_username():
     while(True):
         player.username = input("Enter username here:\n")
         if not player.username.strip():
-            print(Fore.RED + "Please enter a username")
-            print(Style.RESET_ALL)
+            print(Fore.RED + "\nPlease enter a username")
         else:
             print(Fore.GREEN + "\nIt is time to start the game."
-            " Let the great experiment begin!")
-            print(Style.RESET_ALL)
+            " Let the great experiment begin!\n")
             break
     
 def game_menu():
@@ -35,8 +33,7 @@ def game_menu():
     """
     choice = ""
     while(True):
-        print(Fore.MAGENTA + "GAME MENU")
-        print(Style.RESET_ALL)
+        print(Fore.MAGENTA + "GAME MENU\n")
         print("1: Go to the garage sale\n"
         "2: Show your inventory\n" 
         "3: Show score and exit game\n"
@@ -53,8 +50,7 @@ def game_menu():
                 show_vendor_info()
             case _:
                 print(Fore.RED + "Something went wrong, select a number"
-                "between 1-4")
-                print(Style.RESET_ALL)
+                "between 1-4\n")
     
 def go_to_market():
     """
@@ -63,8 +59,7 @@ def go_to_market():
     choice = ""
     while(True):
         print(Fore.GREEN + "\nWelcome to the garage sale! Choose a"
-        " table to visit.")
-        print(Style.RESET_ALL)
+        " table to visit.\n")
         print("1: Jim\n"
         "2: Michael\n" 
         "3: Angela\n"
@@ -89,16 +84,14 @@ def go_to_market():
                 break
             case _:
                 print(Fore.RED + "Something went wrong, select a number "
-                "between 1-5")
-                print(Style.RESET_ALL)
+                "between 1-5\n")
     visit_vendor(choice)
 
 def visit_vendor(vendor):
     """
     Displays the chosen vendors inventory
     """
-    print(Fore.GREEN + f"\n{vendor.welcome}")
-    print(Style.RESET_ALL)
+    print(Fore.GREEN + f"\n{vendor.welcome}\n")
     items_list = vendor.items
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}")
@@ -114,7 +107,7 @@ def visit_vendor(vendor):
             else: 
                 raise ValueError
         except ValueError:
-            print(f"Something went wrong, select a number between "
+            print(Fore.RED + f"Something went wrong, select a number between "
                 f"1-{len(items_list)}")
 
 def trade(item, vendor):
@@ -128,8 +121,7 @@ def trade(item, vendor):
         new_user_item = item
         new_vendor_item = player.items
         print(Fore.GREEN + f"\n{vendor.name}: I will accept that deal."
-         " Here you go.")
-        print(Style.RESET_ALL)
+         " Here you go.\n")
         print("-- Trade went through, inventory updated --\n")
         player.items = new_user_item
         player.trades += 1
@@ -137,8 +129,7 @@ def trade(item, vendor):
         vendor.items.remove(item)   
     else:
         print(Fore.CYAN + f"\n{vendor.name}: That's not a good trade for me. "
-        f"Your {player.items["item"]} is not worth enough.")
-        print(Style.RESET_ALL)
+        f"Your {player.items["item"]} is not worth enough.\n")
         print("-- Trade failed --\n")
     game_menu()
 
@@ -147,8 +138,7 @@ def show_vendor_info():
     """
     Display info about the vendors
     """
-    print(Fore.GREEN + "\nThere are five vendors at the garage sale:")
-    print(Style.RESET_ALL)
+    print(Fore.GREEN + "\nThere are five vendors at the garage sale:\n")
     print(
         "Jim - A tall, skinny guy who is always happy."
         " Would love to trade with you! Most valuble item is the telescope.\n"
@@ -164,27 +154,23 @@ def display_score_and_exit():
     """
     Displays score and exits game
     """
-    print(Fore.GREEN + "\nSCORE")
-    print(Style.RESET_ALL)
+    print(Fore.GREEN + "\nSCORE\n")
     print(f"In {player.trades} trades you have reached a value of ${player.items["value"]},"
     f" good job {player.username}!")
     while (True):
         answer = input("Are you ready to exit game? (Y/N):\n").lower()
         if answer == "y":
-            print(Fore.GREEN + "Thank you for playing!")
-            print(Style.RESET_ALL)
+            print(Fore.GREEN + "\nThank you for playing!\n")
             exit()
             break
         elif answer == "n":
             print(Fore.GREEN + "Let's go back to the menu"
-            " and trade some more!")
-            print(Style.RESET_ALL)
+            " and trade some more!\n")
             game_menu()
             break
         else:
             print(Fore.RED + "Something went wrong, please input"
-            " the letter 'Y' or 'N'")
-            print(Style.RESET_ALL)
+            " the letter 'Y' or 'N'\n")
 
 def main():
     """

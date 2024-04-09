@@ -1,3 +1,6 @@
+from colorama import Fore, Back, Style, init
+init(autoreset = True)
+
 class User:
     """
     Creates user
@@ -9,8 +12,8 @@ class User:
         self.trades = trades
 
     def inventory(self):
-        print("\nINVENTORY")
-        print(f"You have a: {self.items["item"].capitalize()}\n")
+        print(Fore.GREEN + f"\nINVENTORY")
+        print(f"You have a: {self.items["item"]}\n")
 
 #User object
 player = User(1.2, {"item": "thumbtack", "value": 1}, "", 0)
