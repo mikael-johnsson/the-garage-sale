@@ -101,7 +101,7 @@ In the feature it would be prefferable to implement these features:
 ### Languages
 This application was created with Python version 3.12.2.
 ### Libraries & Tools
-Colorama - to implement colors to the application.
+Colorama - to implement colors to the application
 
 Git - for version control
 
@@ -109,11 +109,46 @@ Github - to save & store files during development
 
 Lucidchart - for flowcharts
 
+CI Linter - for validation
+
+Heroku - for deployment
+
+## Testing
+How the application was tested can be found [**here**](TESTING.md)
 ## Deployment
 ### Heroku
+This app was deployed by Heroku. These are the instructions to do that:
+
+1. Sign in / create an account at [Heroku](https://www.heroku.com)
+2. Create a new app by clicking "New" > "Create new app"
+3. Choose a name and set region
+4. Go to settings and click "Reveal Config Vars"
+5. Add a config var of key: PORT value: 8000
+6. Add buildpacks - add Python and nodejs (in that order)
+7. Go to deploy section and choose a deplyoyment method. I used Github since that is were I store my code.
+8. Connect the app to the repo containing your code
+9. Click manual deployment. Your app is now deployed!
+
+NOTE: If using match keyword in the code, first read Bug section in [TESTING.md](TESTING.md)
 ### How to fork
+These are instructions how to fork the app from Github:
+
+1. Sign in / create an account at [Github](https://www.github.com)
+2. Go to the application's repository [*the-garage-sale*](https://github.com/mikael-johnsson/the-garage-sale)
+3. Click "Fork" > "Create a new fork"
+4. Choose an appropriate name and click "Create Fork"
+
 ### How to clone
+These are instructions how to fork the app from Github:
+
+1. Sign in / create an account at [Github](https://www.github.com)
+2. Go to the application's repository [*the-garage-sale*](https://github.com/mikael-johnsson/the-garage-sale)
+3. Click "Code"
+4. Choose to clone via HTTPS, SSH-key or Github CLI
+5. Go to IDE of choice, I chose Gitpod
+6. Create workspace via chosen clone way from step 4
 
 ## Credits
 
 ## Acknowledgments
+Big thank you to my Code Institute mentor Graeme Taylor for insightful tips and encouragement during the development.
