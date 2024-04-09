@@ -10,7 +10,8 @@ def display_instructions():
     print("The game is simple: trade your thumbtack with higher valued items"
     " at one of the five vendors.\n"
     "Your score is the amount of cash your inventory is worth when leaving"
-    " the market. If you are really good you reach the most valuble item - the telescope.\n"
+    " the market. If you are really good you reach the most valuble item"
+    " - the telescope.\n"
     "Remember: the trade deal needs to be good for both you and the vendor -"
     " or they will deny the deal.\n")
     
@@ -142,9 +143,11 @@ def show_vendor_info():
     print(
         "Jim - A tall, skinny guy who is always happy."
         " Would love to trade with you! Most valuble item is the telescope.\n"
-        "Michael - A man in a ill fitting suit. Not the best negotiator. Most valuble item is the plasma tv.\n"
+        "Michael - A man in a ill fitting suit. Not the best negotiator." 
+        " Most valuble item is the plasma tv.\n"
         "Angela - A tiny, tiny woman with a stylish cross around her neck."
-        " Doesn't seem to care for you. Most valuble item is the baby jesus statue \n"
+        " Doesn't seem to care for you. Most valuble item is the baby jesus" 
+        " statue \n"
         "Kevin - A big, bald guy. His items seem to consist of mostly"
         " food and music related stuff. Most valuble item is the drum kit.\n"
         "Phyllis - Kind of looks like your grandma. Her husband seems"
@@ -155,7 +158,8 @@ def display_score_and_exit():
     Displays score and exits game
     """
     print(Fore.GREEN + "\nSCORE\n")
-    print(f"In {player.trades} trades you have reached a value of ${player.items["value"]},"
+    print(f"In {player.trades} trades you have reached a value of" 
+    f" ${player.items["value"]},"
     f" good job {player.username}!")
     while (True):
         answer = input("Are you ready to exit game? (Y/N):\n").lower()
