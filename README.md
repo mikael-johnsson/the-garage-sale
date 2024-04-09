@@ -46,7 +46,7 @@ When the user obtains the telescope or when they feel they have obtained the hig
 #### Project Goals
 The goals of the project are:
 * Create a game with no errors or crashes
-* Deply the game in a way that it's playable when access to link is given
+* Deploy the game in a way that it's playable when access to link is given
 * Have recurring users (not measurable at the moment)
 
 #### User Goals
@@ -79,7 +79,7 @@ The user is asked to input a username. The username is later used for a more per
 
 **Game menu**
 
-The game menu stands out with it's magenta color. It's to here the user is redirected after every feature is worked through.
+The game menu stands out with it's yellow color. It's to here the user is redirected after every feature is played through.
 
 From the game menu you can reach:
 * the vendors
@@ -97,13 +97,13 @@ If "show inventory" option is chosen, the users inventory will displayed. Then r
 
 **Show score and exit**
 
-If "show score and exit" option is chosen, the value of the users current inventory, i.e. the current score, is displayed. The user is thereafter given to option to exit the game or continue playing.
+If "show score and exit" option is chosen, the value of the users current inventory, i.e. the current score, and the amount of attempted trades is displayed. The user is thereafter given to option to exit the game or continue playing.
 
 ![Screenshot of the show score and exit function](assets/images/features_show_score.png)
 
 **Learn more about the vendors**
 
-If "learn more about the vendors" option is chosen, information about the five different vendors are displayed. A cunning player obtain information which of the different vendors are easy / hard to trade with. Then returns the user to "Game menu".
+If "learn more about the vendors" option is chosen, information about the five different vendors are displayed. A cunning player obtain information which of the different vendors are easy / hard to trade with. The user receives the information about each vendors most valuble item. Then returns the user to "Game menu".
 
 ![Screenshot of the learn more about the vendors feature](assets/images/features_show_vendor_info.png)
 
@@ -164,10 +164,10 @@ This app was deployed by Heroku. These are the instructions to do that:
 5. Add a config var of key: PORT value: 8000
 6. Add buildpacks - add Python and nodejs (in that order)
 7. Go to deploy section and choose a deplyoyment method. I used Github since that is were I store my code.
-8. Connect the app to the repo containing your code
+8. Connect the app to the repository containing your code
 9. Click manual deployment. Your app is now deployed!
 
-NOTE: If using match keyword in the code, first read Bug section in [TESTING.md](TESTING.md)
+NOTE: If using match keyword in the code, first read Bugs section in [TESTING.md](TESTING.md)
 ### How to fork
 These are instructions how to fork the app from Github:
 
