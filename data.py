@@ -8,7 +8,8 @@ class User:
         self.username = username
 
     def inventory(self):
-        print(self.items["item"].capitalize())
+        print("\nINVENTORY")
+        print(f"You have a: {self.items["item"].capitalize()}\n")
 
 #User object
 player = User(1.2, {"item": "thumbtack", "value": 1}, "")

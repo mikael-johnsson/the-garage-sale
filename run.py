@@ -46,7 +46,7 @@ def game_menu():
             case "1":
                 go_to_market()
             case "2":
-                show_inventory()
+                player.inventory()
             case "3":
                 display_score_and_exit()
             case "4":
@@ -141,13 +141,6 @@ def trade(item, vendor):
         print("-- Trade failed --\n")
     game_menu()
 
-def show_inventory():
-    """
-    Displays the users inventory
-    """
-    print(Fore.GREEN + "\nINVENTORY")
-    print(Style.RESET_ALL)
-    print(f"You have a: {player.items["item"].capitalize()}\n")
 
 def show_vendor_info():
     """
