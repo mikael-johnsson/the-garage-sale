@@ -15,12 +15,12 @@ Find the site [**here**](https://the-garage-sale-60683b5891c9.herokuapp.com/)
 Find the link to the Readme [**here**](README.md)
 
 ## Table of Contents
-* [Automated testing]()
-* [Manual testing]()
-* [Bugs]()
+* [Automated testing](#automated-testing)
+* [Manual testing](#manual-testing)
+* [Bugs](#bugs)
 
-### Automated testing
-#### Linter validation
+## Automated testing
+### Linter validation
 This application is validated through [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 Errors that were raised:
@@ -29,7 +29,7 @@ Errors that were raised:
 * Inproper indentation of continuing lines
 
 All errors were fixed and the submitted code features no validation errors.
-### Manual testing
+## Manual testing
 |Feature|Test|Outcome|Result|
 |---|---|---|---|
 |*Invalid inputs*||||
@@ -62,7 +62,7 @@ All errors were fixed and the submitted code features no validation errors.
 |Choose vendor|Select a vendor from Vendor menu|Correct vendor displayed|Valid|
 |Make a successful trade|Select item vendor is willing to trade|User and vendor inventory updates, successful trade message displayed|Valid|
 |Make an unsuccessful trade|Select item vendor is not willing to trade|Unsuccessful trade message displayed|Valid|
-### Bugs
+## Bugs
 Two large bugs were discovered during the development of the application.
 
 **Quantity zero bug**
