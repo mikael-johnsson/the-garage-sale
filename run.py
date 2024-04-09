@@ -131,7 +131,6 @@ def trade(item, vendor):
                            " Here you go.\n")
         print("-- Trade went through, inventory updated --\n")
         player.items = new_user_item
-        player.trades += 1
         vendor.items.append(new_vendor_item)
         vendor.items.remove(item)
     else:
@@ -139,6 +138,7 @@ def trade(item, vendor):
                           f"Your {player.items["item"]} is not worth"
                           " enough.\n")
         print("-- Trade failed --\n")
+    player.trades += 1
     game_menu()
 
 
