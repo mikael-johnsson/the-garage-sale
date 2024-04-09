@@ -14,19 +14,19 @@ Find the site [here](https://the-garage-sale-60683b5891c9.herokuapp.com/)
 
 Find the link to the Readme [here](README.md)
 
-##Table of Contents
+## Table of Contents
 * [Automated testing]()
- * [Linter]()CI Python Linter
 * [Manual testing]()
 * [Bugs]()
 
 ### Automated testing
 #### Linter validation
 This application is validated through [CI Python Linter](https://pep8ci.herokuapp.com/)
+
 Errors that were raised:
 * Trailing blankspaces
 * Missing empty lines between functions
-* Inproper indentation with continuing lines
+* Inproper indentation of continuing lines
 
 All errors were fixed and the submitted code features no validation errors.
 ### Manual testing
@@ -56,9 +56,9 @@ All errors were fixed and the submitted code features no validation errors.
 |Instructions displayed|Run game|Instructions displayed|Valid|
 |Go to the garage sale|Select 1 from Game meny|Vendor menu displayed|Valid|
 |Show your inventory|Select 2 from Game menu|Correct inventory displayed|Valid|
-|Show vendor info|Select 4 from Game menu|Correct information displayed|Valid|
 |Show score|Select 3 from Game menu|Correct score displayed|Valid|
-|Exit game|Select 3 from Game menu, press Y|Goodbye message displayed, application exits|Valid|
+|Exit game|Select 3 from Game menu, input Y|Goodbye message displayed, application exits|Valid|
+|Show vendor info|Select 4 from Game menu|Correct information displayed|Valid|
 |Choose vendor|Select a vendor from Vendor menu|Correct vendor displayed|Valid|
 |Make a successful trade|Select item vendor is willing to trade|User and vendor inventory updates, successful trade message displayed|Valid|
 |Make an unsuccessful trade|Select item vendor is not willing to trade|Unsuccessful trade message displayed|Valid|

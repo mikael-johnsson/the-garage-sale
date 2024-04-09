@@ -37,7 +37,7 @@ def game_menu():
     """
     choice = ""
     while (True):
-        print(Fore.MAGENTA + "GAME MENU\n")
+        print(Fore.YELLOW + "GAME MENU\n")
         print("1: Go to the garage sale\n"
               "2: Show your inventory\n"
               "3: Show score and exit game\n"
