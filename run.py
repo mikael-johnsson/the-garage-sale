@@ -132,6 +132,7 @@ def trade(item, vendor):
         print(Style.RESET_ALL)
         print("-- Trade went through, inventory updated --\n")
         player.items = new_user_item
+        player.trades += 1
         vendor.items.append(new_vendor_item)
         vendor.items.remove(item)   
     else:
@@ -165,7 +166,7 @@ def display_score_and_exit():
     """
     print(Fore.GREEN + "\nSCORE")
     print(Style.RESET_ALL)
-    print(f"Your inventory is worth ${player.items["value"]},"
+    print(f"In {player.trades} trades you have reached a value of ${player.items["value"]},"
     f" good job {player.username}!")
     while (True):
         answer = input("Are you ready to exit game? (Y/N):\n").lower()

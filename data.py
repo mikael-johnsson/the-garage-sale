@@ -2,17 +2,18 @@ class User:
     """
     Creates user
     """
-    def __init__(self, luck, items, username):
+    def __init__(self, luck, items, username, trades):
         self.luck = luck
         self.items = items
         self.username = username
+        self.trades = trades
 
     def inventory(self):
         print("\nINVENTORY")
         print(f"You have a: {self.items["item"].capitalize()}\n")
 
 #User object
-player = User(1.2, {"item": "thumbtack", "value": 1}, "")
+player = User(1.2, {"item": "thumbtack", "value": 1}, "", 0)
 
 class Vendor:
     """
