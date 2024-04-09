@@ -158,14 +158,14 @@ def show_vendor_info():
     print(Style.RESET_ALL)
     print(
         "Jim - A tall, skinny guy who is always happy."
-        " Would love to trade with you!\n"
-        "Michael - A man in a ill fitting suit. Not the best negotiator.\n"
+        " Would love to trade with you! Most valuble item is the telescope.\n"
+        "Michael - A man in a ill fitting suit. Not the best negotiator. Most valuble item is the plasma tv.\n"
         "Angela - A tiny, tiny woman with a stylish cross around her neck."
-        " Doesn't seem to care for you. \n"
+        " Doesn't seem to care for you. Most valuble item is the baby jesus statue \n"
         "Kevin - A big, bald guy. His items seem to consist of mostly"
-        " food and music related stuff.\n"
+        " food and music related stuff. Most valuble item is the drum kit.\n"
         "Phyllis - Kind of looks like your grandma. Her husband seems"
-        " to be with her aswell.\n")
+        " to be with her aswell. Most valuble item is the used mini fridge.\n")
 
 def display_score_and_exit():
     """
