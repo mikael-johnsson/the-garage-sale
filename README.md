@@ -12,7 +12,25 @@ Find the site [**here**](https://the-garage-sale-60683b5891c9.herokuapp.com/)
 
 ## Table of Contents
 * [User Experience](#user-experience)
+    * [How to play](#how-to-play)
     * [User Stories](#user-stories)
+        * [Project Goals](#project-goals)
+        * [User Goals](#user-goals)
+* [Features](#features)
+    * [Flowchart](#flowchart)
+    * [Existing Features](#existing-features)
+    * [Future Features](#future-features)
+* [Technologies](#technologies-used)
+    * [Languages](#languages)
+    * [Libraries & Tools](#libraries--tools)
+* [Testing](#testing)
+* [Deployment](#deployment)
+    * [Heroku](#heroku)
+    * [How to fork](#how-to-fork)
+    * [How to clone](#how-to-clone)
+* [Credits](#credits)
+* [Acknowledgments](#acknowledgments)
+
 
 ## User Experience
 The Garage Sale game is a quick and in some way simple game. The user chooses itself when to finish the game. The amounts of allowed visits to the vendors is infinite but aswell as getting a higher valued item the user can leave them with a lower valued item.
