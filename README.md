@@ -149,6 +149,9 @@ These are instructions how to fork the app from Github:
 6. Create workspace via chosen clone way from step 4
 
 ## Credits
+* A tutorial by Code Institute were followed to create the workspace and deploy the application
+* [This](https://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python) Stack Overflow thread were used for learning to use the match keyword
+* A reply in Slack by the user DiarmuidHenry_5p helped me with the deployment bug
 
 ## Acknowledgments
 Big thank you to my Code Institute mentor Graeme Taylor for insightful tips and encouragement during the development.
