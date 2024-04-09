@@ -102,16 +102,15 @@ def visit_vendor(vendor):
     items_list = vendor.items
     for item in items_list:
         print(f"{(items_list.index(item)+1)}: {item["item"].capitalize()}")
-    item_input = True
-    while(item_input):
+    while(True):
         try:
             chosen_number = int(input("What would you like to trade? "
             f"(1-{len(items_list)}):\n"))
             if chosen_number > 0 and chosen_number <= len(items_list):
-                item_input = False
                 i = chosen_number - 1
                 chosen_item = items_list[i]
                 trade(chosen_item, vendor)
+                break
             else: 
                 raise ValueError
         except ValueError:
