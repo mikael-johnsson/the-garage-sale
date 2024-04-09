@@ -33,14 +33,14 @@ Find the site [**here**](https://the-garage-sale-60683b5891c9.herokuapp.com/)
 
 
 ## User Experience
-The Garage Sale game is a quick and in some way simple game. The user chooses itself when to finish the game. The amounts of allowed visits to the vendors is infinite but aswell as getting a higher valued item the user can leave them with a lower valued item.
+The Garage Sale game is a quick and in some way simple game. The user chooses when to finish the game. The amounts of allowed visits to the vendors are infinite but aswell as getting a higher valued item in the trade the user can receive a lower valued item.
 
 ### How to play
 The user start with an inventory of a thumbtack. They can then choose to meet a vendor to trade that item with one of the five items the vendor possesses. If the vendor find the trade acceptable, the item changes hand. Aswell does the thumbtack. Hopefully, the users new item is more valuble than the thumbtack.
 
 Some vendors are easier to trade with than other. Information about which to favor is available from the game menu.
 
-When the user feels they have obtained the highest valuble item there is - they can go to the exit of the market and find out how valuble their item is. That value is their final score.
+When the user obtains the telescope or when they feel they have obtained the highest valuble item they can - they can go to the exit of the market and find out how valuble their item is. That value is their final score. Amounts of trades are counted and displayed aswell.
 ### User Stories
 
 #### Project Goals
@@ -89,7 +89,7 @@ If "show inventory" option is chosen, the users inventory will displayed. Then r
 
 **Show score and exit**
 
-If "show score and exit" option is chosen, the value of the users current inventory i.e. the current score. The user is thereafter given to option to exit the game or continue playing.
+If "show score and exit" option is chosen, the value of the users current inventory, i.e. the current score, is displayed. The user is thereafter given to option to exit the game or continue playing.
 
 **Learn more about the vendors**
 
@@ -101,11 +101,11 @@ If "Go to garage sale" option is chosen, the user is displayed with five differe
 
 **Vendors**
 
-When meeting with the vendors, their five items are displayed and the user is asked with item they would like to trade.
+When meeting with the vendors, their five items are displayed and the user is asked which item they would like to trade.
 
 **Trading**
 
-If the vendor find the users item to be worth equal to or more then the chosen item the, trade is successful. A message is shown and the user is taken back to the game menu and can now find their new item in their inventory.
+If the vendor find the users item to be worth equal to or more then the chosen item the trade is successful. A message is shown and the user is taken back to the game menu and can now find their new item in their inventory.
 
 If the vendor find the users item to be worth less than the chosen item, a message is shown and the user is taken back to the game menu.
 
