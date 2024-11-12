@@ -4,7 +4,7 @@ init(autoreset=True)
 
 class User:
     """
-    Creates user
+    Creates user to play with
     """
     def __init__(self, luck, items, username, trades):
         self.luck = luck
